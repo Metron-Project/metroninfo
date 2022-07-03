@@ -1,0 +1,206 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema elementFormDefault="qualified" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+    <xs:element name="MetronInfo" type="metroninfoType" />
+    <!-- Complex Types -->
+    <xs:complexType name="metroninfoType">
+        <xs:sequence>
+            <xs:element name="Source" type="sourceType" minOccurs="0" />
+            <xs:element name="Publisher" type="xs:string" />
+            <xs:element name="Series" type="seriesType" />
+            <xs:element name="Volume" type="xs:int" minOccurs="0" />
+            <xs:element name="Number" type="xs:string" /> <!-- Should there always be a number? -->
+            <xs:element name="Story" type="xs:string" minOccurs="0" maxOccurs="unbounded" /> <!-- Story titles in issue -->
+            <xs:element name="Summary" type="xs:string" minOccurs="0" />
+            <xs:element name="Price" type="priceType" minOccurs="0" />
+            <xs:element name="CoverDate" type="xs:date" />
+            <xs:element name="StoreDate" type="xs:date" minOccurs="0" />
+            <xs:element name="PageCount" type="xs:int" default="0" />
+            <xs:element name="Genre" type="genreType" minOccurs="0" maxOccurs="unbounded" />
+            <xs:element name="Tag" type="xs:string" minOccurs="0" maxOccurs="unbounded" />
+            <xs:element name="Arc" type="arcType" minOccurs="0" maxOccurs="unbounded" />
+            <xs:element name="Characters" type="charactersType" minOccurs="0" />
+            <xs:element name="Teams" type="teamsType" minOccurs="0" />
+            <xs:element name="Locations" type="locationsType" minOccurs="0" />
+            <xs:element name="BlackAndWhite" type="xs:boolean" minOccurs="0" default="false" />
+            <xs:element name="AgeRating" type="ratingType" minOccurs="0" default="Unknown" />
+            <xs:element name="URL" type="xs:string" minOccurs="0" maxOccurs="unbounded" />
+            <xs:element name="Credits" type="creditsType" minOccurs="0" />
+            <xs:element name="Pages" type="ArrayOfComicPageInfo" minOccurs="0" />
+        </xs:sequence>
+    </xs:complexType>
+    <xs:complexType name="seriesType">
+        <xs:sequence>
+            <xs:element name="Name" type="xs:string" />
+            <xs:element name="SortName" type="xs:string" />
+            <xs:element name="Type" type="publicationType" />
+        </xs:sequence>
+        <xs:attribute name="lang" type="xs:string" default="EN" />
+    </xs:complexType>
+    <xs:complexType name="sourceType">
+        <xs:sequence>
+            <xs:element name="Name" type="informationSource" />
+            <xs:element name="ID" type="xs:int" />
+        </xs:sequence>
+    </xs:complexType>
+    <xs:complexType name="arcType">
+        <xs:sequence>
+            <xs:element name="Name" type="xs:string" />
+            <xs:element name="Number" type="xs:int" minOccurs="0" />
+        </xs:sequence>
+    </xs:complexType>
+    <xs:complexType name="charactersType">
+        <xs:sequence>
+            <xs:element name="Character" type="xs:string" minOccurs="0" maxOccurs="unbounded" />
+        </xs:sequence>
+    </xs:complexType>
+    <xs:complexType name="teamsType">
+        <xs:sequence>
+            <xs:element name="Team" type="xs:string" minOccurs="0" maxOccurs="unbounded" />
+        </xs:sequence>
+    </xs:complexType>
+    <xs:complexType name="locationsType">
+        <xs:sequence>
+            <xs:element name="Location" type="xs:string" minOccurs="0" maxOccurs="unbounded" />
+        </xs:sequence>
+    </xs:complexType>
+    <xs:complexType name="creditsType">
+        <xs:sequence>
+            <xs:element name="Credit" type="creditType" minOccurs="0" maxOccurs="unbounded" />
+        </xs:sequence>
+    </xs:complexType>
+    <xs:complexType name="rolesType">
+        <xs:sequence>
+            <xs:element name="Role" type="roleType" minOccurs="0" maxOccurs="unbounded" />
+        </xs:sequence>
+    </xs:complexType>
+    <xs:complexType name="creditType">
+        <xs:sequence>
+            <xs:element name="Creator" type="xs:string" />
+            <xs:element name="Roles" type="rolesType" minOccurs="0" />
+        </xs:sequence>
+    </xs:complexType>
+    <xs:complexType name="priceType">
+        <xs:simpleContent>
+            <xs:extension base="xs:decimal">
+                <xs:attribute name="currency" type="currencyType" default="dollars"></xs:attribute>
+            </xs:extension>
+        </xs:simpleContent>
+    </xs:complexType>
+    <xs:complexType name="ArrayOfComicPageInfo">
+        <xs:sequence>
+            <xs:element name="Page" type="ComicPageInfo" minOccurs="0" maxOccurs="unbounded" />
+        </xs:sequence>
+    </xs:complexType>
+    <xs:complexType name="ComicPageInfo">
+        <xs:attribute name="Image" type="xs:int" use="required" />
+        <xs:attribute name="Type" type="ComicPageType" default="Story" />
+        <xs:attribute name="DoublePage" type="xs:boolean" default="false" />
+        <xs:attribute name="ImageSize" type="xs:long" default="0" />
+        <xs:attribute name="Key" type="xs:string" default="" />
+        <xs:attribute name="Bookmark" type="xs:string" default="" />
+        <xs:attribute name="ImageWidth" type="xs:int" default="-1" />
+        <xs:attribute name="ImageHeight" type="xs:int" default="-1" />
+    </xs:complexType>
+
+    <!-- Simple Types -->
+    <xs:simpleType name="publicationType">
+        <xs:restriction base="xs:string">
+            <xs:enumeration value="Annual" />
+            <xs:enumeration value="Graphic Novel" />
+            <xs:enumeration value="Limited" /> <!-- Used for mini/maxi series -->
+            <xs:enumeration value="One-Shot" />
+            <xs:enumeration value="Series" /> <!-- Needs better name, but used for Ongoing/Cancelled series -->
+            <xs:enumeration value="Trade Paperback" />
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="informationSource">
+        <xs:restriction base="xs:string">
+            <xs:enumeration value="Comic Vine" />
+            <xs:enumeration value="Grand Comics Database" />
+            <xs:enumeration value="Metron" />
+            <xs:enumeration value="League of Comic Geeks" />
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="roleType">
+        <xs:restriction base="xs:string">
+            <xs:enumeration value="Writer" />
+            <xs:enumeration value="Penciller" />
+            <xs:enumeration value="Inker" />
+            <xs:enumeration value="Colorist" />
+            <xs:enumeration value="Letterer" />
+            <xs:enumeration value="Cover" />
+            <xs:enumeration value="Assistant Editor" />
+            <xs:enumeration value="Associate Editor" />
+            <xs:enumeration value="Editor" />
+            <xs:enumeration value="Group Editor" />
+            <xs:enumeration value="Editor in Chief" />
+            <xs:enumeration value="Publisher" />
+            <xs:enumeration value="Translator" />
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="genreType">
+        <xs:restriction base="xs:string">
+            <xs:enumeration value="Adult" />
+            <xs:enumeration value="Crime" />
+            <xs:enumeration value="Espionage" />
+            <xs:enumeration value="Fantasy" />
+            <xs:enumeration value="Historical" />
+            <xs:enumeration value="Horror" />
+            <xs:enumeration value="Humor" />
+            <xs:enumeration value="Manga" />
+            <xs:enumeration value="Parody" />
+            <xs:enumeration value="Romance" />
+            <xs:enumeration value="Science Fiction" />
+            <xs:enumeration value="Sport" />
+            <xs:enumeration value="Super-Hero" />
+            <xs:enumeration value="War" />
+            <xs:enumeration value="Western" />
+        </xs:restriction>
+    </xs:simpleType>
+    <!-- Don't really care for age ratings values used by ComicInfo, but for now let's use it. -->
+    <xs:simpleType name="ratingType">
+        <xs:restriction base="xs:string">
+            <xs:enumeration value="Unknown" />
+            <xs:enumeration value="Adults Only 18+" />
+            <xs:enumeration value="Early Childhood" />
+            <xs:enumeration value="Everyone" />
+            <xs:enumeration value="Everyone 10+" />
+            <xs:enumeration value="G" />
+            <xs:enumeration value="Kids to Adults" />
+            <xs:enumeration value="M" />
+            <xs:enumeration value="MA15+" />
+            <xs:enumeration value="Mature 17+" />
+            <xs:enumeration value="PG" />
+            <xs:enumeration value="R18+" />
+            <xs:enumeration value="Rating Pending" />
+            <xs:enumeration value="Teen" />
+            <xs:enumeration value="X18+" />
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="currencyType">
+        <xs:restriction base="xs:string">
+          <xs:enumeration value="pounds"/>
+          <xs:enumeration value="euros"/>
+          <xs:enumeration value="dollars"/>
+        </xs:restriction>
+      </xs:simpleType>
+    <xs:simpleType name="ComicPageType">
+        <xs:list>
+            <xs:simpleType>
+                <xs:restriction base="xs:string">
+                    <xs:enumeration value="FrontCover" />
+                    <xs:enumeration value="InnerCover" />
+                    <xs:enumeration value="Roundup" />
+                    <xs:enumeration value="Story" />
+                    <xs:enumeration value="Advertisement" />
+                    <xs:enumeration value="Editorial" />
+                    <xs:enumeration value="Letters" />
+                    <xs:enumeration value="Preview" />
+                    <xs:enumeration value="BackCover" />
+                    <xs:enumeration value="Other" />
+                    <xs:enumeration value="Deleted" />
+                </xs:restriction>
+            </xs:simpleType>
+        </xs:list>
+    </xs:simpleType>
+</xs:schema>
