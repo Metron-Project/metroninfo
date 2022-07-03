@@ -15,15 +15,15 @@
             <xs:element name="CoverDate" type="xs:date" />
             <xs:element name="StoreDate" type="xs:date" minOccurs="0" />
             <xs:element name="PageCount" type="xs:int" default="0" />
-            <xs:element name="Genres" type="genresType" minOccurs="0" maxOccurs="unbounded" />
+            <xs:element name="Genres" type="genresType" minOccurs="0" />
             <xs:element name="Tag" type="xs:string" minOccurs="0" maxOccurs="unbounded" />
-            <xs:element name="Arcs" type="arcsType" minOccurs="0" maxOccurs="unbounded" />
+            <xs:element name="Arcs" type="arcsType" minOccurs="0" />
             <xs:element name="Characters" type="charactersType" minOccurs="0" />
             <xs:element name="Teams" type="teamsType" minOccurs="0" />
             <xs:element name="Locations" type="locationsType" minOccurs="0" />
             <xs:element name="BlackAndWhite" type="xs:boolean" minOccurs="0" default="false" />
             <xs:element name="AgeRating" type="ratingType" minOccurs="0" default="Unknown" />
-            <xs:element name="URL" type="xs:string" minOccurs="0" maxOccurs="unbounded" />
+            <xs:element name="URL" type="xs:string" minOccurs="0" />
             <xs:element name="Credits" type="creditsType" minOccurs="0" />
             <xs:element name="Pages" type="ArrayOfComicPageInfo" minOccurs="0" />
         </xs:sequence>
