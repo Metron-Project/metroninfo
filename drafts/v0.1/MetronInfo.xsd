@@ -16,7 +16,7 @@
             <xs:element name="StoreDate" type="xs:date" minOccurs="0" />
             <xs:element name="PageCount" type="xs:int" default="0" />
             <xs:element name="Genres" type="genresType" minOccurs="0" />
-            <xs:element name="Tag" type="xs:string" minOccurs="0" maxOccurs="unbounded" />
+            <xs:element name="Tags" type="tagsType" minOccurs="0" />
             <xs:element name="Arcs" type="arcsType" minOccurs="0" />
             <xs:element name="Characters" type="charactersType" minOccurs="0" />
             <xs:element name="Teams" type="teamsType" minOccurs="0" />
@@ -66,6 +66,11 @@
     <xs:complexType name="storyType">
         <xs:sequence>
             <xs:element name="Story" type="xs:string" minOccurs="0" maxOccurs="unbounded" />
+        </xs:sequence>
+    </xs:complexType>
+    <xs:complexType name="tagsType">
+        <xs:sequence>
+            <xs:element name="Tag" type="xs:string" minOccurs="0" maxOccurs="unbounded" />
         </xs:sequence>
     </xs:complexType>
     <xs:complexType name="teamsType">

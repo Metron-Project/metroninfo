@@ -23,6 +23,10 @@
     <Genres>
         <Genre>Super-Hero</Genre>
     </Genres>
+    <Tags>
+        <Tag>Foo</Tag>
+        <Tag>Bar</Tag>
+    </Tags>
     <Arcs>
         <Arc>
             <Name>Origin</Name>
