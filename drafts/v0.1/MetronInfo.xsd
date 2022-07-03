@@ -58,14 +58,14 @@
             <xs:element name="Character" type="xs:string" minOccurs="0" maxOccurs="unbounded" />
         </xs:sequence>
     </xs:complexType>
-    <xs:complexType name="teamsType">
-        <xs:sequence>
-            <xs:element name="Team" type="xs:string" minOccurs="0" maxOccurs="unbounded" />
-        </xs:sequence>
-    </xs:complexType>
     <xs:complexType name="genresType">
         <xs:sequence>
             <xs:element name="Genre" type="genreType" minOccurs="0" maxOccurs="unbounded" />
+        </xs:sequence>
+    </xs:complexType>
+    <xs:complexType name="teamsType">
+        <xs:sequence>
+            <xs:element name="Team" type="xs:string" minOccurs="0" maxOccurs="unbounded" />
         </xs:sequence>
     </xs:complexType>
     <xs:complexType name="locationsType">
