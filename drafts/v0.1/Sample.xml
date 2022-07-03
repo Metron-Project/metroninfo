@@ -18,7 +18,9 @@
     <CoverDate>2011-10-01</CoverDate>
     <StoreDate>2011-08-31</StoreDate>
     <PageCount>32</PageCount>
-    <Genre>Super-Hero</Genre>
+    <Genres>
+        <Genre>Super-Hero</Genre>
+    </Genres>
     <Arc>
         <Name>Origin</Name>
         <Number>1</Number>
