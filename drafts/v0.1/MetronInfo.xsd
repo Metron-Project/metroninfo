@@ -40,7 +40,7 @@
     <xs:complexType name="sourceType">
         <xs:simpleContent>
             <xs:extension base="xs:int">
-                <xs:attribute name="source" type="informationSource" default="Comic Vine" />
+                <xs:attribute name="source" type="informationSource" use="required"/>
             </xs:extension>
         </xs:simpleContent>
     </xs:complexType>
@@ -104,7 +104,7 @@
     <xs:complexType name="priceType">
         <xs:simpleContent>
             <xs:extension base="xs:decimal">
-                <xs:attribute name="currency" type="currencyType" default="dollars" />
+                <xs:attribute name="currency" type="currencyType" use="required" />
             </xs:extension>
         </xs:simpleContent>
     </xs:complexType>
@@ -112,7 +112,7 @@
     <xs:complexType name="gtinType">
         <xs:simpleContent>
             <xs:extension base="xs:long">
-                <xs:attribute name="structure" type="gtinStructureType" default="upc" />
+                <xs:attribute name="structure" type="gtinStructureType" use="required" />
             </xs:extension>
         </xs:simpleContent>
     </xs:complexType>
