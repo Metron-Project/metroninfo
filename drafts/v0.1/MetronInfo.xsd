@@ -21,6 +21,7 @@
             <xs:element name="Characters" type="charactersType" minOccurs="0" />
             <xs:element name="Teams" type="teamsType" minOccurs="0" />
             <xs:element name="Locations" type="locationsType" minOccurs="0" />
+            <xs:element name="GTIN" type="gtinType" minOccurs="0" maxOccurs="2"/>
             <xs:element name="BlackAndWhite" type="xs:boolean" minOccurs="0" default="false" />
             <xs:element name="AgeRating" type="ratingType" minOccurs="0" default="Unknown" />
             <xs:element name="URL" type="xs:string" minOccurs="0" /> <!-- Should we make this an array? -->
@@ -102,7 +103,15 @@
     <xs:complexType name="priceType">
         <xs:simpleContent>
             <xs:extension base="xs:decimal">
-                <xs:attribute name="currency" type="currencyType" default="dollars"></xs:attribute>
+                <xs:attribute name="currency" type="currencyType" default="dollars" />
+            </xs:extension>
+        </xs:simpleContent>
+    </xs:complexType>
+    <!-- TODO: Probably need to add some restrictions on lenth.-->
+    <xs:complexType name="gtinType">
+        <xs:simpleContent>
+            <xs:extension base="xs:long">
+                <xs:attribute name="structure" type="gtinStructureType" default="upc" />
             </xs:extension>
         </xs:simpleContent>
     </xs:complexType>
@@ -123,6 +132,12 @@
     </xs:complexType>
 
     <!-- Simple Types -->
+    <xs:simpleType name="gtinStructureType">
+        <xs:restriction base="xs:string">
+            <xs:enumeration value="isbn" />
+            <xs:enumeration value="upc" />
+        </xs:restriction>
+    </xs:simpleType>
     <xs:simpleType name="publicationType">
         <xs:restriction base="xs:string">
             <xs:enumeration value="Annual" />
