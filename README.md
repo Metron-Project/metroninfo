@@ -6,7 +6,7 @@
 
 ## Rationale
 
-Other sources of informations (GCD, League of Comic Geeks, Metron) provide more data than Comic Vine, and it would be nice to have an XML Schema to handle it.
+Other sources of information (GCD, Metron, etc.) provide more data than Comic Vine, and it would be nice to have an XML Schema to handle it.
 
 ## Where can I find the schemas?
 
