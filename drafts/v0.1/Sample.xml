@@ -21,10 +21,15 @@
     <Genres>
         <Genre>Super-Hero</Genre>
     </Genres>
-    <Arc>
-        <Name>Origin</Name>
-        <Number>1</Number>
-    </Arc>
+    <Arcs>
+        <Arc>
+            <Name>Origin</Name>
+            <Number>1</Number>
+        </Arc>
+        <Arc>
+            <Name>The New 52!</Name>
+        </Arc>
+    </Arcs>
     <Characters>
         <Character>Aquaman</Character>
         <Character>Batman</Character>
