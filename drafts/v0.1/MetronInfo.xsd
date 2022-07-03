@@ -4,7 +4,7 @@
     <!-- Complex Types -->
     <xs:complexType name="metroninfoType">
         <xs:sequence>
-            <xs:element name="Source" type="sourceType" minOccurs="0" />
+            <xs:element name="ID" type="sourceType" minOccurs="0" />
             <xs:element name="Publisher" type="xs:string" />
             <xs:element name="Series" type="seriesType" />
             <xs:element name="Volume" type="xs:int" minOccurs="0" />
@@ -38,10 +38,11 @@
         <xs:attribute name="lang" type="xs:string" default="EN" />
     </xs:complexType>
     <xs:complexType name="sourceType">
-        <xs:sequence>
-            <xs:element name="Name" type="informationSource" />
-            <xs:element name="ID" type="xs:int" />
-        </xs:sequence>
+        <xs:simpleContent>
+            <xs:extension base="xs:int">
+                <xs:attribute name="source" type="informationSource" default="Comic Vine" />
+            </xs:extension>
+        </xs:simpleContent>
     </xs:complexType>
     <xs:complexType name="arcsType">
         <xs:sequence>
