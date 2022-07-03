@@ -58,7 +58,7 @@
         <Location>Gotham City</Location>
         <Location>Metropolis</Location>
     </Locations>
-    <BlackAndWhite>true</BlackAndWhite>
+    <BlackAndWhite>false</BlackAndWhite>
     <AgeRating>Everyone</AgeRating>
     <URL>https://comicvine.gamespot.com/justice-league-1-justice-league-part-one/4000-290431/</URL>
     <Credits>
