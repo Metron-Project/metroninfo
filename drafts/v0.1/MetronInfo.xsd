@@ -3,7 +3,7 @@
     <xs:element name="MetronInfo" type="metroninfoType" />
     <!-- Complex Types -->
     <xs:complexType name="metroninfoType">
-        <xs:sequence>
+        <xs:all>
             <xs:element name="ID" type="sourceType" minOccurs="0" />
             <xs:element name="Publisher" type="xs:string" />
             <xs:element name="Series" type="seriesType" />
@@ -21,26 +21,26 @@
             <xs:element name="Characters" type="charactersType" minOccurs="0" />
             <xs:element name="Teams" type="teamsType" minOccurs="0" />
             <xs:element name="Locations" type="locationsType" minOccurs="0" />
-            <xs:element name="GTIN" type="gtinType" minOccurs="0" maxOccurs="2"/>
+            <xs:element name="GTIN" type="gtinType" minOccurs="0" />
             <xs:element name="BlackAndWhite" type="xs:boolean" minOccurs="0" default="false" />
             <xs:element name="AgeRating" type="ratingType" minOccurs="0" default="Unknown" />
             <xs:element name="URL" type="xs:string" minOccurs="0" /> <!-- Should we make this an array? -->
             <xs:element name="Credits" type="creditsType" minOccurs="0" />
             <xs:element name="Pages" type="ArrayOfComicPageInfo" minOccurs="0" />
-        </xs:sequence>
+        </xs:all>
     </xs:complexType>
     <xs:complexType name="seriesType">
-        <xs:sequence>
+        <xs:all>
             <xs:element name="Name" type="xs:string" />
             <xs:element name="SortName" type="xs:string" />
             <xs:element name="Type" type="publicationType" />
-        </xs:sequence>
+        </xs:all>
         <xs:attribute name="lang" type="xs:string" default="EN" />
     </xs:complexType>
     <xs:complexType name="sourceType">
         <xs:simpleContent>
             <xs:extension base="xs:int">
-                <xs:attribute name="source" type="informationSource" use="required"/>
+                <xs:attribute name="source" type="informationSource" use="required" />
             </xs:extension>
         </xs:simpleContent>
     </xs:complexType>
@@ -50,10 +50,10 @@
         </xs:sequence>
     </xs:complexType>
     <xs:complexType name="arcType">
-        <xs:sequence>
+        <xs:all>
             <xs:element name="Name" type="xs:string" />
             <xs:element name="Number" type="xs:int" minOccurs="0" />
-        </xs:sequence>
+        </xs:all>
     </xs:complexType>
     <xs:complexType name="charactersType">
         <xs:sequence>
@@ -96,10 +96,10 @@
         </xs:sequence>
     </xs:complexType>
     <xs:complexType name="creditType">
-        <xs:sequence>
+        <xs:all>
             <xs:element name="Creator" type="xs:string" />
             <xs:element name="Roles" type="rolesType" minOccurs="0" />
-        </xs:sequence>
+        </xs:all>
     </xs:complexType>
     <xs:complexType name="priceType">
         <xs:simpleContent>
@@ -108,13 +108,11 @@
             </xs:extension>
         </xs:simpleContent>
     </xs:complexType>
-    <!-- TODO: Probably need to add some restrictions on lenth.-->
     <xs:complexType name="gtinType">
-        <xs:simpleContent>
-            <xs:extension base="xs:long">
-                <xs:attribute name="structure" type="gtinStructureType" use="required" />
-            </xs:extension>
-        </xs:simpleContent>
+        <xs:all>
+            <xs:element name="ISBN" minOccurs="0" />
+            <xs:element name="UPC" minOccurs="0" />
+        </xs:all>
     </xs:complexType>
     <xs:complexType name="ArrayOfComicPageInfo">
         <xs:sequence>
@@ -133,12 +131,6 @@
     </xs:complexType>
 
     <!-- Simple Types -->
-    <xs:simpleType name="gtinStructureType">
-        <xs:restriction base="xs:string">
-            <xs:enumeration value="isbn" />
-            <xs:enumeration value="upc" />
-        </xs:restriction>
-    </xs:simpleType>
     <xs:simpleType name="publicationType">
         <xs:restriction base="xs:string">
             <xs:enumeration value="Annual" />
