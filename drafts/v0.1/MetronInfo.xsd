@@ -21,6 +21,7 @@
             <xs:element name="Characters" type="charactersType" minOccurs="0" />
             <xs:element name="Teams" type="teamsType" minOccurs="0" />
             <xs:element name="Locations" type="locationsType" minOccurs="0" />
+            <xs:element name="Reprints" type="reprintsType" minOccurs="0" />
             <xs:element name="GTIN" type="gtinType" minOccurs="0" />
             <xs:element name="BlackAndWhite" type="xs:boolean" minOccurs="0" default="false" />
             <xs:element name="AgeRating" type="ratingType" minOccurs="0" default="Unknown" />
@@ -63,6 +64,17 @@
     <xs:complexType name="genresType">
         <xs:sequence>
             <xs:element name="Genre" type="genreType" minOccurs="0" maxOccurs="unbounded" />
+        </xs:sequence>
+    </xs:complexType>
+    <xs:complexType name="reprintType">
+        <xs:all>
+            <xs:element name="ID" type="sourceType" />
+            <xs:element name="Name" type="xs:string" />
+        </xs:all>
+    </xs:complexType>
+    <xs:complexType name="reprintsType">
+        <xs:sequence>
+            <xs:element name="Reprint" type="reprintType" minOccurs="0" maxOccurs="unbounded" />
         </xs:sequence>
     </xs:complexType>
     <xs:complexType name="storyType">
