@@ -2,7 +2,7 @@
 
 ## What is it?
 
-`MetronInfo.xml` is an attempt to create a new schema for digital comic books that fixes some of the problems with `ComicInfo.xml`.
+`MetronInfo.xml` is an attempt to create a new schema for digital comic books that fixes some of the deficiencies that exist with the `ComicInfo.xml` schema.
 
 ## Rationale
 
