@@ -40,7 +40,7 @@
     </xs:complexType>
     <xs:complexType name="sourceType">
         <xs:simpleContent>
-            <xs:extension base="xs:int">
+            <xs:extension base="xs:positiveInteger">
                 <xs:attribute name="source" type="informationSource" use="required" />
             </xs:extension>
         </xs:simpleContent>
@@ -53,7 +53,7 @@
     <xs:complexType name="arcType">
         <xs:all>
             <xs:element name="Name" type="xs:string" />
-            <xs:element name="Number" type="xs:int" minOccurs="0" />
+            <xs:element name="Number" type="xs:positiveInteger" minOccurs="0" />
         </xs:all>
     </xs:complexType>
     <xs:complexType name="charactersType">
