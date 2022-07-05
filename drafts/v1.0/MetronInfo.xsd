@@ -196,6 +196,7 @@
             <xs:enumeration value="Production" />
             <xs:enumeration value="Designer" />
             <xs:enumeration value="Logo Design" />
+            <xs:enumeration value="Translator" />
             <xs:enumeration value="Supervising Editor" />
             <xs:enumeration value="Executive Editor" />
             <xs:enumeration value="Editor In Chief" />
