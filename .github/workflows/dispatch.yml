@@ -2,7 +2,7 @@ name: Dispatch events
 
 on:
   push:
-    branches: [ main ]
+    branches: [ master ]
     paths:
       - '**.md'
       - '**.xsd'
