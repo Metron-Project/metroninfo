@@ -25,7 +25,7 @@
             <xs:element name="Reprints" type="reprintsType" minOccurs="0" />
             <xs:element name="GTIN" type="gtinType" minOccurs="0" />
             <xs:element name="BlackAndWhite" type="xs:boolean" minOccurs="0" default="false" />
-            <xs:element name="AgeRating" type="ratingType" minOccurs="0" default="Unknown" />
+            <xs:element name="AgeRating" type="ageRatingType" minOccurs="0" default="Unknown" />
             <xs:element name="URL" type="xs:string" minOccurs="0" /> <!-- Should we make this an array? -->
             <xs:element name="Credits" type="creditsType" minOccurs="0" />
             <xs:element name="Pages" type="ArrayOfComicPageInfo" minOccurs="0" />
@@ -227,24 +227,18 @@
             <xs:enumeration value="Western" />
         </xs:restriction>
     </xs:simpleType>
-    <!-- Don't really care for age ratings values used by ComicInfo, but for now let's use it. -->
-    <xs:simpleType name="ratingType">
+    <!--
+        There's no governing body for age ratings, so let's use something fairly simple to cover most cases.
+        It won't be perfect, but adding different values for all the different ways publishers use them seems
+        unnecessarily difficult.
+    -->
+    <xs:simpleType name="ageRatingType">
         <xs:restriction base="xs:string">
             <xs:enumeration value="Unknown" />
-            <xs:enumeration value="Adults Only 18+" />
-            <xs:enumeration value="Early Childhood" />
-            <xs:enumeration value="Everyone" />
-            <xs:enumeration value="Everyone 10+" />
-            <xs:enumeration value="G" />
-            <xs:enumeration value="Kids to Adults" />
-            <xs:enumeration value="M" />
-            <xs:enumeration value="MA15+" />
-            <xs:enumeration value="Mature 17+" />
-            <xs:enumeration value="PG" />
-            <xs:enumeration value="R18+" />
-            <xs:enumeration value="Rating Pending" />
-            <xs:enumeration value="Teen" />
-            <xs:enumeration value="X18+" />
+            <xs:enumeration value="Everyone" /> <!-- Appropriate for readers of all ages. -->
+            <xs:enumeration value="Teen" /> <!-- Appropriate for readers age 12 and older. -->
+            <xs:enumeration value="Teen Plus" /> <!-- Appropriate for readers age 15 and older. -->
+            <xs:enumeration value="Mature" /> <!-- Appropriate for readers age 17 and older. -->
         </xs:restriction>
     </xs:simpleType>
     <xs:simpleType name="currencyType">
