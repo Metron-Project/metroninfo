@@ -43,6 +43,7 @@
             <xs:element name="Story" type="xs:string" minOccurs="0" maxOccurs="unbounded" />
         </xs:sequence>
     </xs:complexType>
+    <!-- Base type to add 'id' attribute to the various resources -->
     <xs:complexType name="resourceType">
         <xs:simpleContent>
             <xs:extension base="xs:string">
@@ -66,11 +67,6 @@
     <xs:complexType name="teamsType">
         <xs:sequence>
             <xs:element name="Team" type="resourceType" minOccurs="0" maxOccurs="unbounded" />
-        </xs:sequence>
-    </xs:complexType>
-    <xs:complexType name="genresType">
-        <xs:sequence>
-            <xs:element name="Genre" type="genreType" minOccurs="0" maxOccurs="unbounded" />
         </xs:sequence>
     </xs:complexType>
     <xs:complexType name="locationsType">
@@ -109,6 +105,13 @@
             <xs:element name="Credit" type="creditType" minOccurs="0" maxOccurs="unbounded" />
         </xs:sequence>
     </xs:complexType>
+    <xs:complexType name="roleType">
+        <xs:simpleContent>
+            <xs:extension base="roleValues">
+                <xs:attribute name="id" type="xs:positiveInteger" />
+            </xs:extension>
+        </xs:simpleContent>
+    </xs:complexType>
     <xs:complexType name="rolesType">
         <xs:sequence>
             <xs:element name="Role" type="roleType" minOccurs="0" maxOccurs="unbounded" />
@@ -119,6 +122,18 @@
             <xs:element name="Creator" type="resourceType" />
             <xs:element name="Roles" type="rolesType" minOccurs="0" />
         </xs:all>
+    </xs:complexType>
+    <xs:complexType name="genreType">
+        <xs:simpleContent>
+            <xs:extension base="genreValues">
+                <xs:attribute name="id" type="xs:positiveInteger" />
+            </xs:extension>
+        </xs:simpleContent>
+    </xs:complexType>
+    <xs:complexType name="genresType">
+        <xs:sequence>
+            <xs:element name="Genre" type="genreType" minOccurs="0" maxOccurs="unbounded" />
+        </xs:sequence>
     </xs:complexType>
     <xs:complexType name="priceType">
         <xs:simpleContent>
@@ -168,7 +183,7 @@
             <xs:enumeration value="League of Comic Geeks" />
         </xs:restriction>
     </xs:simpleType>
-    <xs:simpleType name="roleType">
+    <xs:simpleType name="roleValues">
         <xs:restriction base="xs:string">
             <xs:enumeration value="Writer" />
             <xs:enumeration value="Script" />
@@ -214,7 +229,7 @@
             <xs:enumeration value="Other" />
         </xs:restriction>
     </xs:simpleType>
-    <xs:simpleType name="genreType">
+    <xs:simpleType name="genreValues">
         <xs:restriction base="xs:string">
             <xs:enumeration value="Adult" />
             <xs:enumeration value="Crime" />

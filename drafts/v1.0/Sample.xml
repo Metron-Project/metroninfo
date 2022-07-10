@@ -18,10 +18,11 @@
     <StoreDate>2011-08-31</StoreDate>
     <PageCount>32</PageCount>
     <Genres>
-        <Genre>Super-Hero</Genre>
+        <Genre id="98745">Super-Hero</Genre>
+        <Genre>Crime</Genre>
     </Genres>
     <Tags>
-        <Tag>Foo</Tag>
+        <Tag id="78945">Foo</Tag>
         <Tag>Bar</Tag>
     </Tags>
     <Arcs>
@@ -52,7 +53,7 @@
         <Team>Parademons</Team>
     </Teams>
     <Locations>
-        <Location>Gotham City</Location>
+        <Location id="12389">Gotham City</Location>
         <Location>Metropolis</Location>
     </Locations>
     <BlackAndWhite>false</BlackAndWhite>
@@ -74,7 +75,7 @@
         <Credit>
             <Creator id="32165">Geoff Johns</Creator>
             <Roles>
-                <Role>Writer</Role>
+                <Role id="32165">Writer</Role>
             </Roles>
         </Credit>
         <Credit>
