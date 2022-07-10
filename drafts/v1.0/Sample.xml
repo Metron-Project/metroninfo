@@ -3,7 +3,7 @@
     <ID source="Comic Vine">290431</ID>
     <Publisher>DC Comics</Publisher>
     <Series lang="EN">
-        <Name>Justice League</Name>
+        <Name id="65478">Justice League</Name>
         <SortName>Justice League</SortName>
         <Type>Series</Type>
     </Series>
@@ -18,15 +18,16 @@
     <StoreDate>2011-08-31</StoreDate>
     <PageCount>32</PageCount>
     <Genres>
-        <Genre>Super-Hero</Genre>
+        <Genre id="98745">Super-Hero</Genre>
+        <Genre>Crime</Genre>
     </Genres>
     <Tags>
-        <Tag>Foo</Tag>
+        <Tag id="78945">Foo</Tag>
         <Tag>Bar</Tag>
     </Tags>
     <Arcs>
         <Arc>
-            <Name>Origin</Name>
+            <Name id="78945">Origin</Name>
             <Number>1</Number>
         </Arc>
         <Arc>
@@ -34,7 +35,7 @@
         </Arc>
     </Arcs>
     <Characters>
-        <Character>Aquaman</Character>
+        <Character id="45678">Aquaman</Character>
         <Character>Batman</Character>
         <Character>Cyborg</Character>
         <Character>Deadman</Character>
@@ -48,11 +49,11 @@
         <Character>Wonder Woman</Character>
     </Characters>
     <Teams>
-        <Team>Justice League</Team>
+        <Team id="49948">Justice League</Team>
         <Team>Parademons</Team>
     </Teams>
     <Locations>
-        <Location>Gotham City</Location>
+        <Location id="12389">Gotham City</Location>
         <Location>Metropolis</Location>
     </Locations>
     <BlackAndWhite>false</BlackAndWhite>
@@ -63,20 +64,18 @@
     <AgeRating>Everyone</AgeRating>
     <Reprints>
         <Reprint>
-            <ID source="Comic Vine">123456</ID>
-            <Name>Foo Bar #001 (2002)</Name>
+            <Name id="65498">Foo Bar #001 (2002)</Name>
         </Reprint>
         <Reprint>
-            <ID source="Comic Vine">789456</ID>
             <Name>Foo Bar #002 (2022)</Name>
         </Reprint>
     </Reprints>
     <URL>https://comicvine.gamespot.com/justice-league-1-justice-league-part-one/4000-290431/</URL>
     <Credits>
         <Credit>
-            <Creator>Geoff Johns</Creator>
+            <Creator id="32165">Geoff Johns</Creator>
             <Roles>
-                <Role>Writer</Role>
+                <Role id="32165">Writer</Role>
             </Roles>
         </Credit>
         <Credit>
