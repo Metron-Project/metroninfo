@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <xs:schema elementFormDefault="qualified" xmlns:xs="http://www.w3.org/2001/XMLSchema">
     <xs:element name="MetronInfo" type="metroninfoType" />
+
     <!-- Complex Types -->
     <xs:complexType name="metroninfoType">
         <xs:all>
@@ -30,6 +31,7 @@
             <xs:element name="Pages" type="ArrayOfComicPageInfo" minOccurs="0" />
         </xs:all>
     </xs:complexType>
+
     <xs:complexType name="sourceType">
         <xs:simpleContent>
             <xs:extension base="xs:positiveInteger">
@@ -37,11 +39,13 @@
             </xs:extension>
         </xs:simpleContent>
     </xs:complexType>
+
     <xs:complexType name="storyType">
         <xs:sequence>
             <xs:element name="Story" type="xs:string" minOccurs="0" maxOccurs="unbounded" />
         </xs:sequence>
     </xs:complexType>
+
     <!-- Base type to add 'id' attribute to the various resources -->
     <xs:complexType name="resourceType">
         <xs:simpleContent>
@@ -50,61 +54,72 @@
             </xs:extension>
         </xs:simpleContent>
     </xs:complexType>
+
     <xs:complexType name="seriesType">
         <xs:all>
             <xs:element name="Name" type="resourceType" />
             <xs:element name="SortName" type="xs:string" minOccurs="0" />
             <xs:element name="Volume" type="xs:int" minOccurs="0" />
-            <xs:element name="Type" type="publicationType" minOccurs="0" />
+            <xs:element name="Format" type="formatType" minOccurs="0" />
         </xs:all>
         <xs:attribute name="lang" type="xs:string" default="EN" />
     </xs:complexType>
+
     <xs:complexType name="charactersType">
         <xs:sequence>
             <xs:element name="Character" type="resourceType" minOccurs="0" maxOccurs="unbounded" />
         </xs:sequence>
     </xs:complexType>
+
     <xs:complexType name="teamsType">
         <xs:sequence>
             <xs:element name="Team" type="resourceType" minOccurs="0" maxOccurs="unbounded" />
         </xs:sequence>
     </xs:complexType>
+
     <xs:complexType name="locationsType">
         <xs:sequence>
             <xs:element name="Location" type="resourceType" minOccurs="0" maxOccurs="unbounded" />
         </xs:sequence>
     </xs:complexType>
+
     <xs:complexType name="tagsType">
         <xs:sequence>
             <xs:element name="Tag" type="resourceType" minOccurs="0" maxOccurs="unbounded" />
         </xs:sequence>
     </xs:complexType>
+
     <xs:complexType name="reprintType">
         <xs:sequence>
             <xs:element name="Name" type="resourceType" />
         </xs:sequence>
     </xs:complexType>
+
     <xs:complexType name="reprintsType">
         <xs:sequence>
             <xs:element name="Reprint" type="reprintType" minOccurs="0" maxOccurs="unbounded" />
         </xs:sequence>
     </xs:complexType>
+
     <xs:complexType name="arcsType">
         <xs:sequence>
             <xs:element name="Arc" type="arcType" minOccurs="0" maxOccurs="unbounded" />
         </xs:sequence>
     </xs:complexType>
+
     <xs:complexType name="arcType">
         <xs:all>
             <xs:element name="Name" type="resourceType" />
             <xs:element name="Number" type="xs:positiveInteger" minOccurs="0" />
         </xs:all>
     </xs:complexType>
+
     <xs:complexType name="creditsType">
         <xs:sequence>
             <xs:element name="Credit" type="creditType" minOccurs="0" maxOccurs="unbounded" />
         </xs:sequence>
     </xs:complexType>
+
     <xs:complexType name="roleType">
         <xs:simpleContent>
             <xs:extension base="roleValues">
@@ -112,17 +127,20 @@
             </xs:extension>
         </xs:simpleContent>
     </xs:complexType>
+
     <xs:complexType name="rolesType">
         <xs:sequence>
             <xs:element name="Role" type="roleType" minOccurs="0" maxOccurs="unbounded" />
         </xs:sequence>
     </xs:complexType>
+
     <xs:complexType name="creditType">
         <xs:all>
             <xs:element name="Creator" type="resourceType" />
             <xs:element name="Roles" type="rolesType" minOccurs="0" />
         </xs:all>
     </xs:complexType>
+
     <xs:complexType name="genreType">
         <xs:simpleContent>
             <xs:extension base="genreValues">
@@ -130,11 +148,13 @@
             </xs:extension>
         </xs:simpleContent>
     </xs:complexType>
+
     <xs:complexType name="genresType">
         <xs:sequence>
             <xs:element name="Genre" type="genreType" minOccurs="0" maxOccurs="unbounded" />
         </xs:sequence>
     </xs:complexType>
+
     <xs:complexType name="priceType">
         <xs:simpleContent>
             <xs:extension base="xs:decimal">
@@ -142,17 +162,20 @@
             </xs:extension>
         </xs:simpleContent>
     </xs:complexType>
+
     <xs:complexType name="gtinType">
         <xs:all>
             <xs:element name="ISBN" minOccurs="0" />
             <xs:element name="UPC" minOccurs="0" />
         </xs:all>
     </xs:complexType>
+
     <xs:complexType name="ArrayOfComicPageInfo">
         <xs:sequence>
             <xs:element name="Page" type="ComicPageInfo" minOccurs="0" maxOccurs="unbounded" />
         </xs:sequence>
     </xs:complexType>
+
     <xs:complexType name="ComicPageInfo">
         <xs:attribute name="Image" type="xs:int" use="required" />
         <xs:attribute name="Type" type="ComicPageType" default="Story" />
@@ -165,7 +188,7 @@
     </xs:complexType>
 
     <!-- Simple Types -->
-    <xs:simpleType name="publicationType">
+    <xs:simpleType name="formatType">
         <xs:restriction base="xs:string">
             <xs:enumeration value="Annual" />
             <xs:enumeration value="Graphic Novel" />
@@ -175,6 +198,7 @@
             <xs:enumeration value="Trade Paperback" />
         </xs:restriction>
     </xs:simpleType>
+
     <xs:simpleType name="informationSource">
         <xs:restriction base="xs:string">
             <xs:enumeration value="Comic Vine" />
@@ -183,6 +207,7 @@
             <xs:enumeration value="League of Comic Geeks" />
         </xs:restriction>
     </xs:simpleType>
+
     <xs:simpleType name="roleValues">
         <xs:restriction base="xs:string">
             <xs:enumeration value="Writer" />
@@ -229,6 +254,7 @@
             <xs:enumeration value="Other" />
         </xs:restriction>
     </xs:simpleType>
+
     <xs:simpleType name="genreValues">
         <xs:restriction base="xs:string">
             <xs:enumeration value="Adult" />
@@ -262,6 +288,7 @@
             <xs:enumeration value="Mature" /> <!-- Appropriate for readers age 17 and older. -->
         </xs:restriction>
     </xs:simpleType>
+
     <xs:simpleType name="currencyType">
         <xs:restriction base="xs:string">
             <xs:enumeration value="pounds" />
@@ -269,6 +296,7 @@
             <xs:enumeration value="dollars" />
         </xs:restriction>
     </xs:simpleType>
+
     <xs:simpleType name="ComicPageType">
         <xs:list>
             <xs:simpleType>
