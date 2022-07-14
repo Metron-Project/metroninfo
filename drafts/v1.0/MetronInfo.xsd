@@ -16,6 +16,7 @@
             <xs:element name="CoverDate" type="xs:date" />
             <xs:element name="StoreDate" type="xs:date" minOccurs="0" />
             <xs:element name="PageCount" type="xs:int" default="0" />
+            <xs:element name="Notes" type="xs:string" minOccurs="0" />
             <xs:element name="Genres" type="genresType" minOccurs="0" />
             <xs:element name="Tags" type="tagsType" minOccurs="0" />
             <xs:element name="Arcs" type="arcsType" minOccurs="0" />
