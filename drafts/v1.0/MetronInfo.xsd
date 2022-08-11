@@ -159,7 +159,7 @@
     <xs:complexType name="priceType">
         <xs:simpleContent>
             <xs:extension base="xs:decimal">
-                <xs:attribute name="currency" type="currencyType" use="required" />
+                <xs:attribute name="country" type="countryCode" use="required" />
             </xs:extension>
         </xs:simpleContent>
     </xs:complexType>
@@ -290,11 +290,9 @@
         </xs:restriction>
     </xs:simpleType>
 
-    <xs:simpleType name="currencyType">
+    <xs:simpleType name="countryCode">
         <xs:restriction base="xs:string">
-            <xs:enumeration value="pounds" />
-            <xs:enumeration value="euros" />
-            <xs:enumeration value="dollars" />
+            <xs:pattern value="[A-Z][A-Z]" />
         </xs:restriction>
     </xs:simpleType>
 
