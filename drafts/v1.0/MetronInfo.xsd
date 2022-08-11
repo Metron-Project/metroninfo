@@ -63,7 +63,7 @@
             <xs:element name="Volume" type="xs:int" minOccurs="0" />
             <xs:element name="Format" type="formatType" minOccurs="0" />
         </xs:all>
-        <xs:attribute name="lang" type="xs:string" default="EN" />
+        <xs:attribute name="lang" type="languageCode" default="en" />
     </xs:complexType>
 
     <xs:complexType name="charactersType">
@@ -293,6 +293,12 @@
     <xs:simpleType name="countryCode">
         <xs:restriction base="xs:string">
             <xs:pattern value="[A-Z][A-Z]" />
+        </xs:restriction>
+    </xs:simpleType>
+
+    <xs:simpleType name="languageCode">
+        <xs:restriction base="xs:string">
+            <xs:pattern value="[a-z][a-z]" />
         </xs:restriction>
     </xs:simpleType>
 
