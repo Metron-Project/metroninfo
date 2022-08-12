@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <MetronInfo xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="MetronInfo.xsd">
     <ID source="Comic Vine">290431</ID>
-    <Publisher>DC Comics</Publisher>
+    <Publisher id="12345">DC Comics</Publisher>
     <Series lang="en">
         <Name id="65478">Justice League</Name>
         <SortName>Justice League</SortName>
@@ -10,7 +10,8 @@
     </Series>
     <Number>1</Number>
     <Stories>
-        <Story>Justice League, Part One</Story>
+        <Story id="12">Justice League, Part One</Story>
+        <Story>Justice League, Part Two</Story>
     </Stories>
     <Summary>In a universe where super heroes are strange and new, Batman has discovered a dark evil that requires him to unite the World Greatest Heroes!</Summary>
     <Notes>Nothing really to say.</Notes>
