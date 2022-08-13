@@ -12,7 +12,7 @@
             <xs:element name="Number" type="xs:string" minOccurs="0" />
             <xs:element name="Stories" type="storyType" minOccurs="0" /> <!-- Story titles in issue -->
             <xs:element name="Summary" type="xs:string" minOccurs="0" />
-            <xs:element name="Price" type="priceType" minOccurs="0" />
+            <xs:element name="Prices" type="pricesType" minOccurs="0" />
             <xs:element name="CoverDate" type="xs:date" />
             <xs:element name="StoreDate" type="xs:date" minOccurs="0" />
             <xs:element name="PageCount" type="xs:int" default="0" />
@@ -153,6 +153,12 @@
     <xs:complexType name="genresType">
         <xs:sequence>
             <xs:element name="Genre" type="genreType" minOccurs="0" maxOccurs="unbounded" />
+        </xs:sequence>
+    </xs:complexType>
+
+    <xs:complexType name="pricesType">
+        <xs:sequence>
+            <xs:element name="Price" type="priceType" minOccurs="0" maxOccurs="unbounded" />
         </xs:sequence>
     </xs:complexType>
 
