@@ -58,12 +58,13 @@
 
     <xs:complexType name="seriesType">
         <xs:all>
-            <xs:element name="Name" type="resourceType" />
+            <xs:element name="Name" type="xs:string" />
             <xs:element name="SortName" type="xs:string" minOccurs="0" />
             <xs:element name="Volume" type="xs:int" minOccurs="0" />
             <xs:element name="Format" type="formatType" minOccurs="0" />
         </xs:all>
         <xs:attribute name="lang" type="languageCode" default="en" />
+        <xs:attribute name="id" type="xs:positiveInteger" />
     </xs:complexType>
 
     <xs:complexType name="charactersType">
@@ -92,8 +93,9 @@
 
     <xs:complexType name="reprintType">
         <xs:sequence>
-            <xs:element name="Name" type="resourceType" />
+            <xs:element name="Name" type="xs:string" />
         </xs:sequence>
+        <xs:attribute name="id" type="xs:positiveInteger" />
     </xs:complexType>
 
     <xs:complexType name="reprintsType">
@@ -110,9 +112,10 @@
 
     <xs:complexType name="arcType">
         <xs:all>
-            <xs:element name="Name" type="resourceType" />
+            <xs:element name="Name" type="xs:string" />
             <xs:element name="Number" type="xs:positiveInteger" minOccurs="0" />
         </xs:all>
+        <xs:attribute name="id" type="xs:positiveInteger" />
     </xs:complexType>
 
     <xs:complexType name="creditsType">
