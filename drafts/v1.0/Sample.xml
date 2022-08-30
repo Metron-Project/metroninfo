@@ -2,8 +2,8 @@
 <MetronInfo xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="MetronInfo.xsd">
     <ID source="Comic Vine">290431</ID>
     <Publisher id="12345">DC Comics</Publisher>
-    <Series lang="en">
-        <Name id="65478">Justice League</Name>
+    <Series id="65478" lang="en">
+        <Name>Justice League</Name>
         <SortName>Justice League</SortName>
         <Volume>2</Volume>
         <Format>Series</Format>
@@ -31,8 +31,8 @@
         <Tag>Bar</Tag>
     </Tags>
     <Arcs>
-        <Arc>
-            <Name id="78945">Origin</Name>
+        <Arc id="78945">
+            <Name>Origin</Name>
             <Number>1</Number>
         </Arc>
         <Arc>
@@ -68,8 +68,8 @@
     </GTIN>
     <AgeRating>Everyone</AgeRating>
     <Reprints>
-        <Reprint>
-            <Name id="65498">Foo Bar #001 (2002)</Name>
+        <Reprint id="65498">
+            <Name>Foo Bar #001 (2002)</Name>
         </Reprint>
         <Reprint>
             <Name>Foo Bar #002 (2022)</Name>
