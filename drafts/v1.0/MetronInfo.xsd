@@ -91,16 +91,9 @@
         </xs:sequence>
     </xs:complexType>
 
-    <xs:complexType name="reprintType">
-        <xs:sequence>
-            <xs:element name="Name" type="xs:string" />
-        </xs:sequence>
-        <xs:attribute name="id" type="xs:positiveInteger" />
-    </xs:complexType>
-
     <xs:complexType name="reprintsType">
         <xs:sequence>
-            <xs:element name="Reprint" type="reprintType" minOccurs="0" maxOccurs="unbounded" />
+            <xs:element name="Reprint" type="resourceType" minOccurs="0" maxOccurs="unbounded" />
         </xs:sequence>
     </xs:complexType>
 
