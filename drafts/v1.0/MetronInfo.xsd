@@ -199,6 +199,7 @@
             <xs:enumeration value="One-Shot" />
             <xs:enumeration value="Series" /> <!-- Needs better name, but used for Ongoing/Cancelled series -->
             <xs:enumeration value="Trade Paperback" />
+            <xs:enumeration value="Hardcover" />
         </xs:restriction>
     </xs:simpleType>
 
