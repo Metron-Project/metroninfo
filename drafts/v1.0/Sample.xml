@@ -57,6 +57,15 @@
         <Team id="49948">Justice League</Team>
         <Team>Parademons</Team>
     </Teams>
+    <Universes>
+        <Universe id="24">
+            <Name>ABC</Name>
+            <Designation>Earth 25</Designation>
+        </Universe>
+        <Universe>
+            <Name>Amalgam</Name>
+        </Universe>
+    </Universes>
     <Locations>
         <Location id="12389">Gotham City</Location>
         <Location>Metropolis</Location>
