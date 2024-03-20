@@ -195,7 +195,7 @@
         <xs:restriction base="xs:string">
             <xs:enumeration value="Annual" />
             <xs:enumeration value="Graphic Novel" />
-            <xs:enumeration value="Limited" /> <!-- Used for mini/maxi series -->
+            <xs:enumeration value="Limited Series" /> <!-- Used for mini/maxi series -->
             <xs:enumeration value="One-Shot" />
             <xs:enumeration value="Series" /> <!-- Needs better name, but used for Ongoing/Cancelled series -->
             <xs:enumeration value="Trade Paperback" />
