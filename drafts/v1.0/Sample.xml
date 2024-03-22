@@ -70,7 +70,6 @@
         <Location id="12389">Gotham City</Location>
         <Location>Metropolis</Location>
     </Locations>
-    <BlackAndWhite>false</BlackAndWhite>
     <GTIN>
         <ISBN>1234567890123</ISBN>
         <UPC>76194130593600111</UPC>
