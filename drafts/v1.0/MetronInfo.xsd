@@ -5,7 +5,7 @@
     <!-- Complex Types -->
     <xs:complexType name="metroninfoType">
         <xs:all>
-            <xs:element name="ID" type="sourceType" minOccurs="0" />
+            <xs:element name="ID" type="sourcesType" minOccurs="0" />
             <xs:element name="Publisher" type="resourceType" />
             <xs:element name="Series" type="seriesType" />
             <xs:element name="CollectionTitle" type="xs:string" minOccurs="0" />
@@ -31,6 +31,15 @@
             <xs:element name="Credits" type="creditsType" minOccurs="0" />
             <xs:element name="Pages" type="ArrayOfComicPageInfo" minOccurs="0" />
         </xs:all>
+    </xs:complexType>
+
+    <xs:complexType name="sourcesType">
+        <xs:sequence>
+            <!-- The following element should be used for the primary source of metadata information. -->
+            <xs:element name="Primary" type="sourceType" />
+            <!-- The following should be used for linking to other resources for the same issue. -->
+            <xs:element name="Alternative" type="sourceType" minOccurs="0" maxOccurs="unbounded" />
+        </xs:sequence>
     </xs:complexType>
 
     <xs:complexType name="sourceType">
