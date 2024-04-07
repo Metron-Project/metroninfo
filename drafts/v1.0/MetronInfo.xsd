@@ -13,7 +13,7 @@
             <xs:element name="Stories" type="storyType" minOccurs="0" /> <!-- Story titles in issue -->
             <xs:element name="Summary" type="xs:string" minOccurs="0" />
             <xs:element name="Prices" type="pricesType" minOccurs="0" />
-            <xs:element name="CoverDate" type="xs:date" />
+            <xs:element name="CoverDate" type="xs:date" minOccurs="0" />
             <xs:element name="StoreDate" type="xs:date" minOccurs="0" />
             <xs:element name="PageCount" type="xs:int" minOccurs="0" default="0" />
             <xs:element name="Notes" type="xs:string" minOccurs="0" />
