@@ -27,10 +27,19 @@
             <xs:element name="Reprints" type="reprintsType" minOccurs="0" />
             <xs:element name="GTIN" type="gtinType" minOccurs="0" />
             <xs:element name="AgeRating" type="ageRatingType" minOccurs="0" default="Unknown" />
-            <xs:element name="URL" type="xs:string" minOccurs="0" /> <!-- Should we make this an array? -->
+            <xs:element name="URL" type="urlsType" minOccurs="0" />
             <xs:element name="Credits" type="creditsType" minOccurs="0" />
             <xs:element name="Pages" type="ArrayOfComicPageInfo" minOccurs="0" />
         </xs:all>
+    </xs:complexType>
+
+    <xs:complexType name="urlsType">
+        <xs:sequence>
+            <!-- The following element should be for the primary source url -->
+            <xs:element name="Primary" type="xs:string" />
+            <!-- The following should be used for any additional urls -->
+            <xs:element name="Alternative" type="xs:string" minOccurs="0" maxOccurs="unbounded" />
+        </xs:sequence>
     </xs:complexType>
 
     <xs:complexType name="sourcesType">
