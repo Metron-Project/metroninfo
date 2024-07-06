@@ -12,6 +12,10 @@
         <Volume>2</Volume>
         <Format>Series</Format>
         <Status>Cancelled</Status>
+        <AlternativeNames>
+            <Name id="1234">Foo</Name>
+            <Name lang="de">Hüsker Dü</Name>
+        </AlternativeNames>
     </Series>
     <Number>1</Number>
     <Stories>
