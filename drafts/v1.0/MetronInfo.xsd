@@ -226,7 +226,7 @@
     <xs:simpleType name="formatType">
         <xs:restriction base="xs:string">
             <xs:enumeration value="Annual" />
-            <xs:enumeration value="Digital Chapters" />
+            <xs:enumeration value="Digital Chapter" />
             <xs:enumeration value="Graphic Novel" />
             <xs:enumeration value="Hardcover" />
             <xs:enumeration value="Limited Series" /> <!-- Used for mini/maxi series -->
