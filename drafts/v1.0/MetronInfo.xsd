@@ -80,7 +80,6 @@
             <xs:element name="SortName" type="xs:string" minOccurs="0" />
             <xs:element name="Volume" type="xs:int" minOccurs="0" />
             <xs:element name="Format" type="formatType" minOccurs="0" />
-            <xs:element name="Status" type="publicationStatusType" minOccurs="0" />
             <xs:element name="AlternativeNames" type="alternativeNameType" minOccurs="0" />
         </xs:all>
         <xs:attribute name="lang" type="languageCode" default="en" />
@@ -241,15 +240,6 @@
     </xs:complexType>
 
     <!-- Simple Types -->
-    <xs:simpleType name="publicationStatusType"> <!-- Should this be seriesStatusType? -->
-        <xs:restriction base="xs:string">
-            <xs:enumeration value="Cancelled" />
-            <xs:enumeration value="Complete" />
-            <xs:enumeration value="Hiatus" />
-            <xs:enumeration value="Ongoing" />
-        </xs:restriction>
-    </xs:simpleType>
-
     <xs:simpleType name="formatType">
         <xs:restriction base="xs:string">
             <xs:enumeration value="Annual" />
