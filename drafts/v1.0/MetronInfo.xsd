@@ -30,6 +30,7 @@
             <xs:element name="URL" type="urlsType" minOccurs="0" />
             <xs:element name="Credits" type="creditsType" minOccurs="0" />
             <xs:element name="Pages" type="ArrayOfComicPageInfo" minOccurs="0" />
+            <xs:element name="LastModified" type="xs:dateTime" minOccurs="0" />
         </xs:all>
     </xs:complexType>
 
