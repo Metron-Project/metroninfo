@@ -5,7 +5,10 @@
         <Alternative source="Comic Vine">12345</Alternative>
         <Alternative source="Grand Comics Database">543</Alternative>
     </ID>
-    <Publisher id="12345">DC Comics</Publisher>
+    <Publisher id="12345">
+        <Name>DC Comics</Name>
+        <Imprint id="1234">Vertigo</Imprint>
+    </Publisher>
     <Series id="65478" lang="en">
         <Name>Justice League</Name>
         <SortName>Justice League</SortName>
