@@ -89,9 +89,26 @@
             <xs:element name="SortName" type="xs:string" minOccurs="0" />
             <xs:element name="Volume" type="xs:int" minOccurs="0" />
             <xs:element name="Format" type="formatType" minOccurs="0" />
+            <xs:element name="AlternativeNames" type="alternativeNameType" minOccurs="0" />
         </xs:all>
         <xs:attribute name="lang" type="languageCode" default="en" />
         <xs:attribute name="id" type="xs:positiveInteger" />
+    </xs:complexType>
+
+    <xs:complexType name="alternativeNameType">
+        <xs:sequence>
+            <xs:element name="Name" type="nameType" minOccurs="0" maxOccurs="unbounded" />
+        </xs:sequence>
+    </xs:complexType>
+
+    <!-- Alternative Series Name Base type -->
+    <xs:complexType name="nameType">
+        <xs:simpleContent>
+            <xs:extension base="xs:string">
+                <xs:attribute name="id" type="xs:positiveInteger" />
+                <xs:attribute name="lang" type="languageCode" default="en" />
+            </xs:extension>
+        </xs:simpleContent>
     </xs:complexType>
 
     <xs:complexType name="charactersType">
