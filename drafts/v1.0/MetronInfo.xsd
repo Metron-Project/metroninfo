@@ -238,14 +238,14 @@
     </xs:complexType>
 
     <xs:complexType name="ComicPageInfo">
-        <xs:attribute name="Image" type="xs:int" use="required" />
-        <xs:attribute name="Type" type="ComicPageType" default="Story" />
-        <xs:attribute name="DoublePage" type="xs:boolean" default="false" />
-        <xs:attribute name="ImageSize" type="xs:long" default="0" />
-        <xs:attribute name="Key" type="xs:string" default="" />
-        <xs:attribute name="Bookmark" type="xs:string" default="" />
-        <xs:attribute name="ImageWidth" type="xs:int" default="-1" />
-        <xs:attribute name="ImageHeight" type="xs:int" default="-1" />
+        <xs:attribute name="index" type="xs:int" use="required" />
+        <xs:attribute name="type" type="ComicPageType" default="Story" />
+        <xs:attribute name="double_page" type="xs:boolean" default="false" />
+        <xs:attribute name="size" type="xs:long" default="0" />
+        <xs:attribute name="key" type="xs:string" default="" />
+        <xs:attribute name="bookmark" type="xs:string" default="" />
+        <xs:attribute name="width" type="xs:int" default="-1" />
+        <xs:attribute name="height" type="xs:int" default="-1" />
     </xs:complexType>
 
     <!-- Simple Types -->

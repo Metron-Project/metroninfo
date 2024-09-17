@@ -161,41 +161,41 @@
     </Credits>
     <LastModified>2023-05-31T09:00:46.300882-04:00</LastModified>
     <Pages>
-        <Page Image="0" Type="FrontCover" ImageSize="1733120" ImageHeight="2951" ImageWidth="1920" />
-        <Page Image="1" ImageSize="1320938" ImageHeight="2951" ImageWidth="1920" />
-        <Page Image="2" ImageSize="1298224" ImageHeight="2951" ImageWidth="1920" />
-        <Page Image="3" ImageSize="1587983" ImageHeight="2951" ImageWidth="1920" />
-        <Page Image="4" ImageSize="1840640" ImageHeight="2951" ImageWidth="1920" />
-        <Page Image="5" ImageSize="1759923" ImageHeight="2951" ImageWidth="1920" />
-        <Page Image="6" ImageSize="1719108" ImageHeight="2951" ImageWidth="1920" />
-        <Page Image="7" ImageSize="1776021" ImageHeight="2953" ImageWidth="1920" />
-        <Page Image="8" ImageSize="1216900" ImageHeight="2951" ImageWidth="1920" />
-        <Page Image="9" ImageSize="1650500" ImageHeight="2951" ImageWidth="1920" />
-        <Page Image="10" ImageSize="2544723" ImageHeight="2998" ImageWidth="3900" />
-        <Page Image="11" ImageSize="2045030" ImageHeight="2998" ImageWidth="3900" />
-        <Page Image="12" ImageSize="1773291" ImageHeight="2951" ImageWidth="1920" />
-        <Page Image="13" ImageSize="1780221" ImageHeight="2951" ImageWidth="1920" />
-        <Page Image="14" ImageSize="1729622" ImageHeight="2951" ImageWidth="1920" />
-        <Page Image="15" ImageSize="1702175" ImageHeight="2951" ImageWidth="1920" />
-        <Page Image="16" ImageSize="1574702" ImageHeight="2951" ImageWidth="1920" />
-        <Page Image="17" ImageSize="1669914" ImageHeight="2951" ImageWidth="1920" />
-        <Page Image="18" ImageSize="1730573" ImageHeight="2951" ImageWidth="1920" />
-        <Page Image="19" ImageSize="1765073" ImageHeight="2951" ImageWidth="1920" />
-        <Page Image="20" ImageSize="2121982" ImageHeight="2951" ImageWidth="1920" />
-        <Page Image="21" ImageSize="1910822" ImageHeight="2951" ImageWidth="1920" />
-        <Page Image="22" ImageSize="1611487" ImageHeight="2951" ImageWidth="1920" />
-        <Page Image="23" ImageSize="1614281" ImageHeight="2951" ImageWidth="1920" />
-        <Page Image="24" ImageSize="2091726" ImageHeight="2951" ImageWidth="1920" />
-        <Page Image="25" ImageSize="1908541" ImageHeight="2951" ImageWidth="1920" />
-        <Page Image="26" ImageSize="1924791" ImageHeight="2951" ImageWidth="1920" />
-        <Page Image="27" ImageSize="1919434" ImageHeight="2951" ImageWidth="1920" />
-        <Page Image="28" ImageSize="1658495" ImageHeight="2951" ImageWidth="1920" />
-        <Page Image="29" ImageSize="1841634" ImageHeight="2951" ImageWidth="1920" />
-        <Page Image="30" ImageSize="1794905" ImageHeight="2951" ImageWidth="1920" />
-        <Page Image="31" ImageSize="1950178" ImageHeight="2951" ImageWidth="1920" />
-        <Page Image="32" ImageSize="1847993" ImageHeight="2951" ImageWidth="1920" />
-        <Page Image="33" ImageSize="3447741" ImageHeight="2998" ImageWidth="3900" />
-        <Page Image="34" ImageSize="1758921" ImageHeight="2951" ImageWidth="1920" />
-        <Page Image="35" ImageSize="1886432" ImageHeight="2955" ImageWidth="1920" />
+        <Page index="0" type="FrontCover" size="1733120" height="2951" width="1920" />
+        <Page index="1" size="1320938" height="2951" width="1920" double_page="true" />
+        <Page index="2" size="1298224" height="2951" width="1920" />
+        <Page index="3" size="1587983" height="2951" width="1920" />
+        <Page index="4" size="1840640" height="2951" width="1920" />
+        <Page index="5" size="1759923" height="2951" width="1920" />
+        <Page index="6" size="1719108" height="2951" width="1920" />
+        <Page index="7" size="1776021" height="2953" width="1920" />
+        <Page index="8" size="1216900" height="2951" width="1920" />
+        <Page index="9" size="1650500" height="2951" width="1920" />
+        <Page index="10" size="2544723" height="2998" width="3900" />
+        <Page index="11" size="2045030" height="2998" width="3900" />
+        <Page index="12" size="1773291" height="2951" width="1920" />
+        <Page index="13" size="1780221" height="2951" width="1920" />
+        <Page index="14" size="1729622" height="2951" width="1920" />
+        <Page index="15" size="1702175" height="2951" width="1920" />
+        <Page index="16" size="1574702" height="2951" width="1920" />
+        <Page index="17" size="1669914" height="2951" width="1920" />
+        <Page index="18" size="1730573" height="2951" width="1920" />
+        <Page index="19" size="1765073" height="2951" width="1920" />
+        <Page index="20" size="2121982" height="2951" width="1920" />
+        <Page index="21" size="1910822" height="2951" width="1920" />
+        <Page index="22" size="1611487" height="2951" width="1920" />
+        <Page index="23" size="1614281" height="2951" width="1920" />
+        <Page index="24" size="2091726" height="2951" width="1920" />
+        <Page index="25" size="1908541" height="2951" width="1920" />
+        <Page index="26" size="1924791" height="2951" width="1920" />
+        <Page index="27" size="1919434" height="2951" width="1920" />
+        <Page index="28" size="1658495" height="2951" width="1920" />
+        <Page index="29" size="1841634" height="2951" width="1920" />
+        <Page index="30" size="1794905" height="2951" width="1920" />
+        <Page index="31" size="1950178" height="2951" width="1920" />
+        <Page index="32" size="1847993" height="2951" width="1920" />
+        <Page index="33" size="3447741" height="2998" width="3900" />
+        <Page index="34" size="1758921" height="2951" width="1920" />
+        <Page index="35" size="1886432" height="2955" width="1920" />
     </Pages>
 </MetronInfo>
