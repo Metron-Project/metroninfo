@@ -29,7 +29,6 @@
             <xs:element name="AgeRating" type="ageRatingType" minOccurs="0" default="Unknown" />
             <xs:element name="URL" type="urlsType" minOccurs="0" />
             <xs:element name="Credits" type="creditsType" minOccurs="0" />
-            <xs:element name="Pages" type="ArrayOfComicPageInfo" minOccurs="0" />
             <xs:element name="LastModified" type="xs:dateTime" minOccurs="0" />
         </xs:all>
     </xs:complexType>
@@ -231,23 +230,6 @@
         </xs:all>
     </xs:complexType>
 
-    <xs:complexType name="ArrayOfComicPageInfo">
-        <xs:sequence>
-            <xs:element name="Page" type="ComicPageInfo" minOccurs="0" maxOccurs="unbounded" />
-        </xs:sequence>
-    </xs:complexType>
-
-    <xs:complexType name="ComicPageInfo">
-        <xs:attribute name="Image" type="xs:int" use="required" />
-        <xs:attribute name="Type" type="ComicPageType" default="Story" />
-        <xs:attribute name="DoublePage" type="xs:boolean" default="false" />
-        <xs:attribute name="ImageSize" type="xs:long" default="0" />
-        <xs:attribute name="Key" type="xs:string" default="" />
-        <xs:attribute name="Bookmark" type="xs:string" default="" />
-        <xs:attribute name="ImageWidth" type="xs:int" default="-1" />
-        <xs:attribute name="ImageHeight" type="xs:int" default="-1" />
-    </xs:complexType>
-
     <!-- Simple Types -->
     <xs:simpleType name="formatType">
         <xs:restriction base="xs:string">
@@ -364,25 +346,5 @@
         <xs:restriction base="xs:string">
             <xs:pattern value="[a-z][a-z]" />
         </xs:restriction>
-    </xs:simpleType>
-
-    <xs:simpleType name="ComicPageType">
-        <xs:list>
-            <xs:simpleType>
-                <xs:restriction base="xs:string">
-                    <xs:enumeration value="FrontCover" />
-                    <xs:enumeration value="InnerCover" />
-                    <xs:enumeration value="Roundup" />
-                    <xs:enumeration value="Story" />
-                    <xs:enumeration value="Advertisement" />
-                    <xs:enumeration value="Editorial" />
-                    <xs:enumeration value="Letters" />
-                    <xs:enumeration value="Preview" />
-                    <xs:enumeration value="BackCover" />
-                    <xs:enumeration value="Other" />
-                    <xs:enumeration value="Deleted" />
-                </xs:restriction>
-            </xs:simpleType>
-        </xs:list>
     </xs:simpleType>
 </xs:schema>
