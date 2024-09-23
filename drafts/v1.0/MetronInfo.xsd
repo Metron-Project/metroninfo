@@ -110,7 +110,7 @@
 
     <xs:complexType name="alternativeNameType">
         <xs:sequence>
-            <xs:element name="Name" type="nameType" minOccurs="0" maxOccurs="unbounded" />
+            <xs:element name="AlternativeName" type="nameType" minOccurs="0" maxOccurs="unbounded" />
         </xs:sequence>
     </xs:complexType>
 

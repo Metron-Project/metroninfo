@@ -18,8 +18,8 @@
         <Format>Single Issue</Format>
         <StartYear>1970</StartYear>
         <AlternativeNames>
-            <Name id="1234">Foo</Name>
-            <Name lang="de">Hüsker Dü</Name>
+            <AlternativeName id="1234">Foo</AlternativeName>
+            <AlternativeName lang="de">Hüsker Dü</AlternativeName>
         </AlternativeNames>
     </Series>
     <Number>1</Number>
