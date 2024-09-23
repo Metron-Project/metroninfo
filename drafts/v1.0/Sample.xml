@@ -91,10 +91,13 @@
         <Reprint id="65498">Foo Bar #001 (2002)</Reprint>
         <Reprint>Foo Bar #002 (2022)</Reprint>
     </Reprints>
-    <URL>
+    <URLs>
         <Primary>https://comicvine.gamespot.com/justice-league-1-justice-league-part-one/4000-290431/</Primary>
-        <Alternative>https://foo.bar</Alternative>
-    </URL>
+        <Alternatives>
+            <Alternative>https://foo.bar</Alternative>
+            <Alternative>https://bar.foo</Alternative>
+        </Alternatives>
+    </URLs>
     <Credits>
         <Credit>
             <Creator id="32165">Geoff Johns</Creator>
