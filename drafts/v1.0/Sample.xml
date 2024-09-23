@@ -2,8 +2,10 @@
 <MetronInfo xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="MetronInfo.xsd">
     <ID>
         <Primary source="Metron">290431</Primary>
-        <Alternative source="Comic Vine">12345</Alternative>
-        <Alternative source="Grand Comics Database">543</Alternative>
+        <Alternatives>
+            <Alternative source="Comic Vine">12345</Alternative>
+            <Alternative source="Grand Comics Database">543</Alternative>
+        </Alternatives>
     </ID>
     <Publisher id="12345">
         <Name>DC Comics</Name>
