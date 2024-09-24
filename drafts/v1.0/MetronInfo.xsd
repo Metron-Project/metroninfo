@@ -27,7 +27,7 @@
             <xs:element name="Reprints" type="reprintsType" minOccurs="0" />
             <xs:element name="GTIN" type="gtinType" minOccurs="0" />
             <xs:element name="AgeRating" type="ageRatingType" minOccurs="0" default="Unknown" />
-            <xs:element name="URL" type="urlsType" minOccurs="0" />
+            <xs:element name="URLs" type="urlsType" minOccurs="0" />
             <xs:element name="Credits" type="creditsType" minOccurs="0" />
             <xs:element name="LastModified" type="xs:dateTime" minOccurs="0" />
         </xs:all>
@@ -38,15 +38,28 @@
             <!-- The following element should be for the primary source url -->
             <xs:element name="Primary" type="xs:string" />
             <!-- The following should be used for any additional urls -->
+            <xs:element name="Alternatives" type="AltUrl" minOccurs="0" />
+        </xs:sequence>
+    </xs:complexType>
+
+    <xs:complexType name="AltUrl">
+        <xs:sequence>
             <xs:element name="Alternative" type="xs:string" minOccurs="0" maxOccurs="unbounded" />
         </xs:sequence>
     </xs:complexType>
+
 
     <xs:complexType name="sourcesType">
         <xs:sequence>
             <!-- The following element should be used for the primary source of metadata information. -->
             <xs:element name="Primary" type="sourceType" />
             <!-- The following should be used for linking to other resources for the same issue. -->
+            <xs:element name="Alternatives" type="altIDs" minOccurs="0" />
+        </xs:sequence>
+    </xs:complexType>
+
+    <xs:complexType name="altIDs">
+        <xs:sequence>
             <xs:element name="Alternative" type="sourceType" minOccurs="0" maxOccurs="unbounded" />
         </xs:sequence>
     </xs:complexType>
@@ -97,7 +110,7 @@
 
     <xs:complexType name="alternativeNameType">
         <xs:sequence>
-            <xs:element name="Name" type="nameType" minOccurs="0" maxOccurs="unbounded" />
+            <xs:element name="AlternativeName" type="nameType" minOccurs="0" maxOccurs="unbounded" />
         </xs:sequence>
     </xs:complexType>
 
