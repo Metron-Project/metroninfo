@@ -211,7 +211,7 @@
 
     <xs:complexType name="genreType">
         <xs:simpleContent>
-            <xs:extension base="genreValues">
+            <xs:extension base="xs:string">
                 <xs:attribute name="id" type="xs:positiveInteger" />
             </xs:extension>
         </xs:simpleContent>
@@ -316,25 +316,6 @@
         </xs:restriction>
     </xs:simpleType>
 
-    <xs:simpleType name="genreValues">
-        <xs:restriction base="xs:string">
-            <xs:enumeration value="Adult" />
-            <xs:enumeration value="Crime" />
-            <xs:enumeration value="Espionage" />
-            <xs:enumeration value="Fantasy" />
-            <xs:enumeration value="Historical" />
-            <xs:enumeration value="Horror" />
-            <xs:enumeration value="Humor" />
-            <xs:enumeration value="Manga" />
-            <xs:enumeration value="Parody" />
-            <xs:enumeration value="Romance" />
-            <xs:enumeration value="Science Fiction" />
-            <xs:enumeration value="Sport" />
-            <xs:enumeration value="Super-Hero" />
-            <xs:enumeration value="War" />
-            <xs:enumeration value="Western" />
-        </xs:restriction>
-    </xs:simpleType>
     <!--
         There's no governing body for age ratings, so let's use something fairly simple to cover most cases.
         It won't be perfect, but adding different values for all the different ways publishers use them seems
