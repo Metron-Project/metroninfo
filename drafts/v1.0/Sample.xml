@@ -39,6 +39,7 @@
     <Genres>
         <Genre id="98745">Super-Hero</Genre>
         <Genre>Crime</Genre>
+        <Genre>Foo Bar</Genre>
     </Genres>
     <Tags>
         <Tag id="78945">Foo</Tag>
