@@ -6,7 +6,7 @@
     <xs:complexType name="metroninfoType">
         <xs:all>
             <xs:element name="ID" type="sourcesType" minOccurs="0" />
-            <xs:element name="Publisher" type="publisherType" />
+            <xs:element name="Publisher" type="publisherType" minOccurs="0" />
             <xs:element name="Series" type="seriesType" />
             <xs:element name="Volume" type="xs:string" minOccurs="0" /> <!-- This is used for Manga -->
             <xs:element name="CollectionTitle" type="xs:string" minOccurs="0" />
