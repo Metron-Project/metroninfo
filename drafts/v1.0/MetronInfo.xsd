@@ -262,10 +262,12 @@
 
     <xs:simpleType name="informationSource">
         <xs:restriction base="xs:string">
+            <xs:enumeration value="AniList" />
             <xs:enumeration value="Comic Vine" />
             <xs:enumeration value="Grand Comics Database" />
             <xs:enumeration value="Marvel" />
             <xs:enumeration value="Metron" />
+            <xs:enumeration value="MyAnimeList" />
             <xs:enumeration value="League of Comic Geeks" />
         </xs:restriction>
     </xs:simpleType>
