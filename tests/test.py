@@ -3,8 +3,8 @@ from pathlib import Path
 import pytest
 from xmlschema import XMLSchema11, XMLSchemaValidationError
 
+TEST_XSD = Path(__file__).parent.parent / "drafts" / "v1.0" / "MetronInfo.xsd"
 TEST_FILES_PATH = Path(__file__).parent / "test_files" / "v1.0"
-TEST_XSD = TEST_FILES_PATH / "MetronInfo.xsd"
 
 
 @pytest.mark.parametrize(
