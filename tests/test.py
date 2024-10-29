@@ -18,7 +18,7 @@ def test_valid(xsd, xml) -> None:
 @pytest.mark.parametrize(
     ("xsd", "xml"),
     [(TEST_XSD, TEST_FILES_PATH / "dup_primary_attr.xml")],
-    ids=["valid_xml"],
+    ids=["dup_primary_attr_xml"],
 )
 def test_invalid(xsd, xml) -> None:
     schema = XMLSchema11(xsd)
