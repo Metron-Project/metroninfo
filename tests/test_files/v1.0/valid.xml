@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<MetronInfo xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="MetronInfo.xsd">
+<MetronInfo xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
     <IDS>
         <ID source="Metron" primary="true">290431</ID>
         <ID source="Comic Vine">12345</ID>

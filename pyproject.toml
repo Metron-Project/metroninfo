@@ -1,0 +1,21 @@
+[tool.poetry]
+name = "metroninfo"
+version = "0.1.0"
+description = ""
+authors = ["Brian Pepple <brian@metron.cloud>"]
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.12"
+
+[tool.poetry.group.dev.dependencies]
+xmlschema = "^3.4.2"
+pytest = "^8.3.3"
+ruff = "^0.7.1"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
+
+[tool.pytest.ini_options]
+testpaths = "tests/test*"

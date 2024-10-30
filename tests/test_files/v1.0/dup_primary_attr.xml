@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<MetronInfo xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="MetronInfo.xsd">
+<MetronInfo xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
     <IDS>
         <ID source="Metron" primary="true">290431</ID>
-        <ID source="Comic Vine">12345</ID>
+        <ID source="Comic Vine" primary="true">12345</ID>
         <ID source="Grand Comics Database">543</ID>
     </IDS>
     <Publisher id="12345">
