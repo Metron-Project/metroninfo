@@ -95,6 +95,8 @@
             <xs:element name="Volume" type="xs:int" minOccurs="0" />
             <xs:element name="Format" type="formatType" minOccurs="0" />
             <xs:element name="StartYear" type="xs:gYear" minOccurs="0" />
+            <xs:element name="IssueCount" type="xs:positiveInteger" minOccurs="0" />
+            <xs:element name="VolumeCount" type="xs:positiveInteger" minOccurs="0" />
             <xs:element name="AlternativeNames" type="alternativeNameType" minOccurs="0" />
         </xs:all>
         <xs:attribute name="lang" type="languageCode" default="en" />
