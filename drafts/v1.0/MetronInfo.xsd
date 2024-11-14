@@ -92,7 +92,7 @@
         <xs:all>
             <xs:element name="Name" type="xs:string" />
             <xs:element name="SortName" type="xs:string" minOccurs="0" />
-            <xs:element name="Volume" type="xs:int" minOccurs="0" />
+            <xs:element name="Volume" type="xs:nonNegativeInteger" minOccurs="0" />
             <xs:element name="Format" type="formatType" minOccurs="0" />
             <xs:element name="StartYear" type="xs:gYear" minOccurs="0" />
             <xs:element name="IssueCount" type="xs:positiveInteger" minOccurs="0" />
