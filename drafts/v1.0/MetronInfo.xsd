@@ -259,6 +259,9 @@
             <xs:enumeration value="AniList" />
             <xs:enumeration value="Comic Vine" />
             <xs:enumeration value="Grand Comics Database" />
+            <xs:enumeration value="Kitsu" />  <!-- ID's contain letters, hyphens, and numbers -->
+            <xs:enumeration value="MangaDex" /> <!-- ID's contain letters, hyphens, and numbers -->
+            <xs:enumeration value="MangaUpdates" />
             <xs:enumeration value="Marvel" />
             <xs:enumeration value="Metron" />
             <xs:enumeration value="MyAnimeList" />
