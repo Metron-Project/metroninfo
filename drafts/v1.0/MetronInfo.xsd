@@ -58,7 +58,7 @@
 
     <xs:complexType name="idType">
         <xs:simpleContent>
-            <xs:extension base="xs:positiveInteger">
+            <xs:extension base="xs:string">
                 <xs:attribute name="source" type="informationSource" use="required" />
                 <xs:attribute name="primary" type="xs:boolean" />
             </xs:extension>
@@ -75,7 +75,7 @@
     <xs:complexType name="resourceType">
         <xs:simpleContent>
             <xs:extension base="xs:string">
-                <xs:attribute name="id" type="xs:positiveInteger" />
+                <xs:attribute name="id" type="xs:string" />
             </xs:extension>
         </xs:simpleContent>
     </xs:complexType>
@@ -85,7 +85,7 @@
             <xs:element name="Name" type="xs:string" />
             <xs:element name="Imprint" type="resourceType" minOccurs="0" />
         </xs:all>
-        <xs:attribute name="id" type="xs:positiveInteger" />
+        <xs:attribute name="id" type="xs:string" />
     </xs:complexType>
 
     <xs:complexType name="seriesType">
@@ -100,7 +100,7 @@
             <xs:element name="AlternativeNames" type="alternativeNameType" minOccurs="0" />
         </xs:all>
         <xs:attribute name="lang" type="languageCode" default="en" />
-        <xs:attribute name="id" type="xs:positiveInteger" />
+        <xs:attribute name="id" type="xs:string" />
     </xs:complexType>
 
     <xs:complexType name="alternativeNameType">
@@ -113,7 +113,7 @@
     <xs:complexType name="nameType">
         <xs:simpleContent>
             <xs:extension base="xs:string">
-                <xs:attribute name="id" type="xs:positiveInteger" />
+                <xs:attribute name="id" type="xs:string" />
                 <xs:attribute name="lang" type="languageCode" default="en" />
             </xs:extension>
         </xs:simpleContent>
@@ -160,7 +160,7 @@
             <xs:element name="Name" type="xs:string" />
             <xs:element name="Designation" type="xs:string" minOccurs="0" />
         </xs:all>
-        <xs:attribute name="id" type="xs:positiveInteger" />
+        <xs:attribute name="id" type="xs:string" />
     </xs:complexType>
 
     <xs:complexType name="arcsType">
@@ -174,7 +174,7 @@
             <xs:element name="Name" type="xs:string" />
             <xs:element name="Number" type="xs:positiveInteger" minOccurs="0" />
         </xs:all>
-        <xs:attribute name="id" type="xs:positiveInteger" />
+        <xs:attribute name="id" type="xs:string" />
     </xs:complexType>
 
     <xs:complexType name="creditsType">
@@ -186,7 +186,7 @@
     <xs:complexType name="roleType">
         <xs:simpleContent>
             <xs:extension base="roleValues">
-                <xs:attribute name="id" type="xs:positiveInteger" />
+                <xs:attribute name="id" type="xs:string" />
             </xs:extension>
         </xs:simpleContent>
     </xs:complexType>
@@ -207,7 +207,7 @@
     <xs:complexType name="genreType">
         <xs:simpleContent>
             <xs:extension base="xs:string">
-                <xs:attribute name="id" type="xs:positiveInteger" />
+                <xs:attribute name="id" type="xs:string" />
             </xs:extension>
         </xs:simpleContent>
     </xs:complexType>
@@ -259,6 +259,9 @@
             <xs:enumeration value="AniList" />
             <xs:enumeration value="Comic Vine" />
             <xs:enumeration value="Grand Comics Database" />
+            <xs:enumeration value="Kitsu" />  <!-- ID's contain letters, hyphens, and numbers -->
+            <xs:enumeration value="MangaDex" /> <!-- ID's contain letters, hyphens, and numbers -->
+            <xs:enumeration value="MangaUpdates" />
             <xs:enumeration value="Marvel" />
             <xs:enumeration value="Metron" />
             <xs:enumeration value="MyAnimeList" />

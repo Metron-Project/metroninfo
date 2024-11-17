@@ -4,6 +4,7 @@
         <ID source="Metron" primary="true">290431</ID>
         <ID source="Comic Vine">12345</ID>
         <ID source="Grand Comics Database">543</ID>
+        <ID source="MangaDex">8b34f37a-0181-4f0b-8ce3-01217e9a602c</ID>
     </IDS>
     <Publisher id="12345">
         <Name>DC Comics</Name>
