@@ -3,7 +3,7 @@ from pathlib import Path
 import pytest
 from xmlschema import XMLSchema11, XMLSchemaValidationError
 
-TEST_XSD = Path(__file__).parent.parent / "drafts" / "v1.0" / "MetronInfo.xsd"
+TEST_XSD = Path(__file__).parent.parent / "schema" / "v1.0" / "MetronInfo.xsd"
 TEST_FILES_PATH = Path(__file__).parent / "test_files" / "v1.0"
 
 
@@ -13,12 +13,12 @@ TEST_FILES_PATH = Path(__file__).parent / "test_files" / "v1.0"
         (TEST_XSD, TEST_FILES_PATH / "valid.xml"),
         (
             TEST_XSD,
-            '<?xml version="1.0" encoding="UTF-8"?><MetronInfo xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">'
+            '<?xml version="1.0" encoding="UTF-8"?><MetronInfo>'
             "<Series><Name>Foo</Name></Series><Number /><PageCount>0</PageCount></MetronInfo>",
         ),
         (
             TEST_XSD,
-            '<?xml version="1.0" encoding="UTF-8"?><MetronInfo xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">'
+            '<?xml version="1.0" encoding="UTF-8"?><MetronInfo>'
             "<Series><Name>Foo</Name><Volume>0</Volume></Series><Number /></MetronInfo>",
         ),
     ],
@@ -35,12 +35,12 @@ def test_valid(xsd: Path, xml: Path | str) -> None:
         (TEST_XSD, TEST_FILES_PATH / "dup_primary_attr.xml"),
         (
             TEST_XSD,
-            '<?xml version="1.0" encoding="UTF-8"?><MetronInfo xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">'
+            '<?xml version="1.0" encoding="UTF-8"?><MetronInfo>'
             "<Series><Name>Foo</Name></Series><Number /><PageCount>-1</PageCount></MetronInfo>",
         ),
         (
             TEST_XSD,
-            '<?xml version="1.0" encoding="UTF-8"?><MetronInfo xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">'
+            '<?xml version="1.0" encoding="UTF-8"?><MetronInfo>'
             "<Series><Name>Foo</Name><Volume>-1</Volume></Series><Number /></MetronInfo>",
         ),
     ],
