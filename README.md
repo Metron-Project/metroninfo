@@ -36,6 +36,7 @@ document can be sure of its data. The schema use XSD 1.1, so you need to make su
 instead of XSD 1.0.
 
 For example to validate the XML in python:
+
 ```python
 from pathlib import Path
 from xmlschema import XMLSchema11, XMLSchemaValidationError
@@ -53,4 +54,13 @@ except XMLSchemaValidationError as e:
 # Code to write / read the xml file
 ```
 
+## What software currently supports it?
 
+Currently, the following software does:
+
+- [Metron-Tagger](https://github.com/Metron-Project/metron-tagger) - Commandline tool to tag comic with metadata from
+  Metron Comic Book Database.
+
+If you are a developer that has added support for MetronInfo.xml to your software, please create a PR to update the
+README
+or [contact me](mailto:bpepple@metron.cloud?subject=MetronInfo%20Support&body=Please%20add%20the%20following%20software%20to%the%20README:%20).
