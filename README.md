@@ -23,8 +23,7 @@ Since Digital Comics are just are archive files (like .zip) this new XML schema 
 
 No, the schema only has *Metron* in the name since almost every other format has *Comic* in the name, and the
 originating author hates naming projects, so he went with the simplest choice. 😄 It was designed to be used for any of
-the
-comic resources (Comic Vine, AniList, etc.)
+the comic resources (Comic Vine, AniList, etc.)
 
 ## Where can I find the schemas?
 
