@@ -29,6 +29,11 @@ the comic resources (Comic Vine, AniList, etc.)
 
 Version 1.0 of the schema is located in [schema](./schema) directory
 
+## Is there documentation for it?
+
+Yes, there is [documentation](https://metron-project.github.io/docs/category/metroninfo) describing the elements usage
+and also a Matrix to help with age rating mapping.
+
 ## How can I validate my XML?
 
 It's recommended that any software that writes the XML make use of the schema to validate, so consumers of the XML
