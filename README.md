@@ -65,6 +65,8 @@ Currently, the following software does:
 
 - [Metron-Tagger](https://github.com/Metron-Project/metron-tagger) - Commandline tool to tag comic with metadata from
   Metron Comic Book Database.
+- [Perdoo](https://github.com/Buried-In-Code/Perdoo) - Commandline tool to tag and organize comics from multiple sources
+  (Metron, Comicvine & Marvel)
 
 If you are a developer that has added support for MetronInfo.xml to your software, please create a PR to update the
 README
