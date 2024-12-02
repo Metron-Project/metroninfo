@@ -7,8 +7,8 @@ exist with the `ComicInfo.xml` schema.
 
 ## Rationale
 
-The `ComicInfo.xml` schema was designed for the needs of ComicRack Application (which for all intents is a dead
-project), and supports a fairly limited amount of data. Some benefits of a new schema would include:
+The `ComicInfo.xml` schema was designed for the needs of ComicRack Application ~~(which for all intents is a dead
+project)~~, and supports a fairly limited amount of data. Some benefits of a new schema would include:
 
 - Additional `Elements` for information. (e.g. Price, Global Trade Item Numbers, Series Type, etc.)
 - Better handling of data types. Instead of using delimited strings for list items, we can use Arrays of `Elements`.
@@ -67,6 +67,7 @@ Currently, the following software does:
   Metron Comic Book Database.
 - [Perdoo](https://github.com/Buried-In-Code/Perdoo) - Commandline tool to tag and organize comics from multiple sources
   (Metron, Comicvine & Marvel)
+- [ComicRack Community Edition](https://github.com/maforget/ComicRackCE) - Revival of the ComicRack software, supports reading metroninfo metadata.
 
 If you are a developer that has added support for MetronInfo.xml to your software, please create a PR to update the
 README
