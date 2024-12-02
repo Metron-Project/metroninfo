@@ -7,8 +7,8 @@ exist with the `ComicInfo.xml` schema.
 
 ## Rationale
 
-The `ComicInfo.xml` schema was designed for the needs of ComicRack Application ~~(which for all intents is a dead
-project)~~, and supports a fairly limited amount of data. Some benefits of a new schema would include:
+The `ComicInfo.xml` schema was designed for the needs of the ComicRack Application, and supports a fairly limited amount 
+of data. Some benefits of a new schema would include:
 
 - Additional `Elements` for information. (e.g. Price, Global Trade Item Numbers, Series Type, etc.)
 - Better handling of data types. Instead of using delimited strings for list items, we can use Arrays of `Elements`.
