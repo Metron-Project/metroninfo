@@ -68,6 +68,7 @@ Currently, the following software does:
 - [Perdoo](https://github.com/Buried-In-Code/Perdoo) - Commandline tool to tag and organize comics from multiple sources
   (Metron, Comicvine & Marvel)
 - [ComicRack Community Edition](https://github.com/maforget/ComicRackCE) - Revival of the ComicRack software, supports reading metroninfo metadata.
+- [metroninfo_ct ](https://github.com/mizaki/metroninfo_ct) - A [Comictagger](https://github.com/comictagger/comictagger) plugin to write MetronInfo.xml metadata.
 
 If you are a developer that has added support for MetronInfo.xml to your software, please create a PR to update the
 README
