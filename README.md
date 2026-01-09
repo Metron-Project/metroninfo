@@ -70,7 +70,8 @@ Currently, the following software does:
 - [ComicRack Community Edition](https://github.com/maforget/ComicRackCE) - Revival of the ComicRack software, supports reading metroninfo metadata.
 - [metroninfo_ct ](https://github.com/mizaki/metroninfo_ct) - A [Comictagger](https://github.com/comictagger/comictagger) plugin to write MetronInfo.xml metadata.
 - [Comicbox](https://github.com/ajslater/comicbox) - A comic metadata reading & writing library.
-- [Codex](https://github.com/ajslater/codex) - A web based comic archive browser and reader 
+- [Codex](https://github.com/ajslater/codex) - A web based comic archive browser and reader.
+- [Desaad](https://codeberg.org/bpepple/desaad) - A comic server developed to create/test new features for [Metron](https://metron.cloud/).
 
 If you are a developer that has added support for MetronInfo.xml to your software, please create a PR to update the
 README
