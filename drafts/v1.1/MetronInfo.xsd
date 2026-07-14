@@ -29,6 +29,7 @@
             <xs:element name="Reprints" type="reprintsType" minOccurs="0" />
             <xs:element name="GTIN" type="gtinType" minOccurs="0" />
             <xs:element name="AgeRating" type="ageRatingType" minOccurs="0" default="Unknown" />
+            <xs:element name="CommunityRating" type="communityRatingType" minOccurs="0" />
             <xs:element name="URLs" type="urlsType" minOccurs="0" />
             <xs:element name="Credits" type="creditsType" minOccurs="0" />
             <xs:element name="LastModified" type="xs:dateTime" minOccurs="0" />
@@ -232,6 +233,13 @@
         </xs:all>
     </xs:complexType>
 
+    <xs:complexType name="communityRatingType">
+        <xs:all>
+            <xs:element name="AverageRating" type="averageRatingType" />
+            <xs:element name="RatingCount" type="xs:positiveInteger" minOccurs="0" />
+        </xs:all>
+    </xs:complexType>
+
     <!-- Simple Types -->
     <xs:simpleType name="formatType">
         <xs:restriction base="xs:string">
@@ -323,6 +331,13 @@
             <xs:enumeration value="Mature" /> <!-- Appropriate for readers age 17 and older. -->
             <xs:enumeration value="Explicit" /> <!-- Contains Gore, Sexually Explicit material that would be more extreme than R rating -->
             <xs:enumeration value="Adult" /> <!-- Likely pornographic in nature -->
+        </xs:restriction>
+    </xs:simpleType>
+
+    <xs:simpleType name="averageRatingType">
+        <xs:restriction base="xs:decimal">
+            <xs:minInclusive value="0" />
+            <xs:maxInclusive value="5.0" />
         </xs:restriction>
     </xs:simpleType>
 

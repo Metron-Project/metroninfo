@@ -91,6 +91,10 @@
         <UPC>76194130593600111</UPC>
     </GTIN>
     <AgeRating>Everyone</AgeRating>
+    <CommunityRating>
+        <AverageRating>4.5</AverageRating>
+        <RatingCount>1250</RatingCount>
+    </CommunityRating>
     <Reprints>
         <Reprint id="65498">Foo Bar #001 (2002)</Reprint>
         <Reprint>Foo Bar #002 (2022)</Reprint>

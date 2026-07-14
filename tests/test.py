@@ -44,6 +44,27 @@ TEST_FILES_PATH = Path(__file__).parent / "test_files" / "v1.0"
                 '<?xml version="1.0" encoding="UTF-8"?><MetronInfo>'
                 "<Series><Name>Foo</Name></Series><Number>1</Number><PageCount>0</PageCount></MetronInfo>",
         ),
+        (
+                TEST_V11_XSD,
+                '<?xml version="1.0" encoding="UTF-8"?><MetronInfo>'
+                "<Series><Name>Foo</Name></Series><Number />"
+                "<CommunityRating><AverageRating>4.5</AverageRating><RatingCount>1250</RatingCount></CommunityRating>"
+                "</MetronInfo>",
+        ),
+        (
+                TEST_V11_XSD,
+                '<?xml version="1.0" encoding="UTF-8"?><MetronInfo>'
+                "<Series><Name>Foo</Name></Series><Number />"
+                "<CommunityRating><AverageRating>0</AverageRating></CommunityRating>"
+                "</MetronInfo>",
+        ),
+        (
+                TEST_V11_XSD,
+                '<?xml version="1.0" encoding="UTF-8"?><MetronInfo>'
+                "<Series><Name>Foo</Name></Series><Number />"
+                "<CommunityRating><AverageRating>5.0</AverageRating></CommunityRating>"
+                "</MetronInfo>",
+        ),
     ],
     ids=[
         "valid_xml",
@@ -54,6 +75,9 @@ TEST_FILES_PATH = Path(__file__).parent / "test_files" / "v1.0"
         "v11_volume_zero",
         "v11_alternative_number",
         "v11_alternative_number_absent",
+        "v11_community_rating",
+        "v11_community_rating_min",
+        "v11_community_rating_max",
     ],
 )
 def test_valid(xsd: Path, xml: Path | str) -> None:
@@ -92,6 +116,34 @@ def test_valid(xsd: Path, xml: Path | str) -> None:
                 "<Series><Name>Foo</Name></Series><Number>1</Number>"
                 "<AlternativeNumber>1A</AlternativeNumber><AlternativeNumber>1B</AlternativeNumber></MetronInfo>",
         ),
+        (
+                TEST_V11_XSD,
+                '<?xml version="1.0" encoding="UTF-8"?><MetronInfo>'
+                "<Series><Name>Foo</Name></Series><Number />"
+                "<CommunityRating><AverageRating>5.1</AverageRating></CommunityRating>"
+                "</MetronInfo>",
+        ),
+        (
+                TEST_V11_XSD,
+                '<?xml version="1.0" encoding="UTF-8"?><MetronInfo>'
+                "<Series><Name>Foo</Name></Series><Number />"
+                "<CommunityRating><AverageRating>-0.1</AverageRating></CommunityRating>"
+                "</MetronInfo>",
+        ),
+        (
+                TEST_V11_XSD,
+                '<?xml version="1.0" encoding="UTF-8"?><MetronInfo>'
+                "<Series><Name>Foo</Name></Series><Number />"
+                "<CommunityRating><RatingCount>100</RatingCount></CommunityRating>"
+                "</MetronInfo>",
+        ),
+        (
+                TEST_V11_XSD,
+                '<?xml version="1.0" encoding="UTF-8"?><MetronInfo>'
+                "<Series><Name>Foo</Name></Series><Number />"
+                "<CommunityRating><AverageRating>4.5</AverageRating><RatingCount>0</RatingCount></CommunityRating>"
+                "</MetronInfo>",
+        ),
     ],
     ids=[
         "dup_primary_attr_xml",
@@ -101,6 +153,10 @@ def test_valid(xsd: Path, xml: Path | str) -> None:
         "v11_negative_page_count",
         "v11_negative_volume",
         "v11_duplicate_alternative_number",
+        "v11_community_rating_too_high",
+        "v11_community_rating_negative",
+        "v11_community_rating_missing_average",
+        "v11_community_rating_zero_count",
     ],
 )
 def test_invalid(xsd: Path, xml: Path | str) -> None:
