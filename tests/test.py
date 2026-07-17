@@ -33,8 +33,28 @@ TEST_FILES_PATH = Path(__file__).parent / "test_files" / "v1.0"
                 '<?xml version="1.0" encoding="UTF-8"?><MetronInfo>'
                 "<Series><Name>Foo</Name><Volume>0</Volume></Series><Number /></MetronInfo>",
         ),
+        (
+                TEST_V11_XSD,
+                '<?xml version="1.0" encoding="UTF-8"?><MetronInfo>'
+                "<Series><Name>Foo</Name></Series><Number>1</Number>"
+                "<AlternativeNumber>1A</AlternativeNumber><PageCount>0</PageCount></MetronInfo>",
+        ),
+        (
+                TEST_V11_XSD,
+                '<?xml version="1.0" encoding="UTF-8"?><MetronInfo>'
+                "<Series><Name>Foo</Name></Series><Number>1</Number><PageCount>0</PageCount></MetronInfo>",
+        ),
     ],
-    ids=["valid_xml", "zero_page_count", "volume_zero", "v11_valid_xml", "v11_zero_page_count", "v11_volume_zero"],
+    ids=[
+        "valid_xml",
+        "zero_page_count",
+        "volume_zero",
+        "v11_valid_xml",
+        "v11_zero_page_count",
+        "v11_volume_zero",
+        "v11_alternative_number",
+        "v11_alternative_number_absent",
+    ],
 )
 def test_valid(xsd: Path, xml: Path | str) -> None:
     schema = XMLSchema11(xsd)
@@ -66,8 +86,22 @@ def test_valid(xsd: Path, xml: Path | str) -> None:
                 '<?xml version="1.0" encoding="UTF-8"?><MetronInfo>'
                 "<Series><Name>Foo</Name><Volume>-1</Volume></Series><Number /></MetronInfo>",
         ),
+        (
+                TEST_V11_XSD,
+                '<?xml version="1.0" encoding="UTF-8"?><MetronInfo>'
+                "<Series><Name>Foo</Name></Series><Number>1</Number>"
+                "<AlternativeNumber>1A</AlternativeNumber><AlternativeNumber>1B</AlternativeNumber></MetronInfo>",
+        ),
     ],
-    ids=["dup_primary_attr_xml", "negative_page_count", "negative_volume", "v11_dup_primary_attr_xml", "v11_negative_page_count", "v11_negative_volume" ],
+    ids=[
+        "dup_primary_attr_xml",
+        "negative_page_count",
+        "negative_volume",
+        "v11_dup_primary_attr_xml",
+        "v11_negative_page_count",
+        "v11_negative_volume",
+        "v11_duplicate_alternative_number",
+    ],
 )
 def test_invalid(xsd: Path, xml: Path | str) -> None:
     schema = XMLSchema11(xsd)
