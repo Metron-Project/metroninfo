@@ -4,7 +4,7 @@ import pytest
 from xmlschema import XMLSchema11, XMLSchemaValidationError
 
 TEST_V10_XSD = Path(__file__).parent.parent / "schema" / "v1.0" / "MetronInfo.xsd"
-TEST_V11_XSD = Path(__file__).parent.parent / "drafts" / "v1.1" / "MetronInfo.xsd"
+TEST_V11_XSD = Path(__file__).parent.parent / "schema" / "v1.1" / "MetronInfo.xsd"
 TEST_FILES_PATH = Path(__file__).parent / "test_files" / "v1.0"
 
 
