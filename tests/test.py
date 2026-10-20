@@ -5,7 +5,15 @@ from xmlschema import XMLSchema11, XMLSchemaValidationError
 
 TEST_V10_XSD = Path(__file__).parent.parent / "schema" / "v1.0" / "MetronInfo.xsd"
 TEST_V11_XSD = Path(__file__).parent.parent / "schema" / "v1.1" / "MetronInfo.xsd"
+TEST_V12_XSD = Path(__file__).parent.parent / "drafts" / "v1.2" / "MetronInfo.xsd"
 TEST_FILES_PATH = Path(__file__).parent / "test_files" / "v1.0"
+
+
+def _lang_xml(lang: str) -> str:
+    return (
+        '<?xml version="1.0" encoding="UTF-8"?><MetronInfo>'
+        f'<Series lang="{lang}"><Name>Foo</Name></Series><Number /></MetronInfo>'
+    )
 
 
 @pytest.mark.parametrize(
@@ -65,6 +73,14 @@ TEST_FILES_PATH = Path(__file__).parent / "test_files" / "v1.0"
                 "<CommunityRating><AverageRating>5.0</AverageRating></CommunityRating>"
                 "</MetronInfo>",
         ),
+        (TEST_V12_XSD, TEST_FILES_PATH / "valid.xml"),
+        (TEST_V12_XSD, _lang_xml("en")),
+        (TEST_V12_XSD, _lang_xml("fil")),
+        (TEST_V12_XSD, _lang_xml("pt-br")),
+        (TEST_V12_XSD, _lang_xml("pt-BR")),
+        (TEST_V12_XSD, _lang_xml("zh-Hant")),
+        (TEST_V12_XSD, _lang_xml("sr-latn")),
+        (TEST_V12_XSD, _lang_xml("es-419")),
     ],
     ids=[
         "valid_xml",
@@ -78,6 +94,14 @@ TEST_FILES_PATH = Path(__file__).parent / "test_files" / "v1.0"
         "v11_community_rating",
         "v11_community_rating_min",
         "v11_community_rating_max",
+        "v12_valid_xml",
+        "v12_lang_en",
+        "v12_lang_fil",
+        "v12_lang_pt_br",
+        "v12_lang_pt_BR",
+        "v12_lang_zh_Hant",
+        "v12_lang_sr_latn",
+        "v12_lang_es_419",
     ],
 )
 def test_valid(xsd: Path, xml: Path | str) -> None:
@@ -144,6 +168,12 @@ def test_valid(xsd: Path, xml: Path | str) -> None:
                 "<CommunityRating><AverageRating>4.5</AverageRating><RatingCount>0</RatingCount></CommunityRating>"
                 "</MetronInfo>",
         ),
+        (TEST_V11_XSD, _lang_xml("pt-br")),
+        (TEST_V12_XSD, _lang_xml("e")),
+        (TEST_V12_XSD, _lang_xml("english")),
+        (TEST_V12_XSD, _lang_xml("en_US")),
+        (TEST_V12_XSD, _lang_xml("en-")),
+        (TEST_V12_XSD, _lang_xml("pt--br")),
     ],
     ids=[
         "dup_primary_attr_xml",
@@ -157,6 +187,12 @@ def test_valid(xsd: Path, xml: Path | str) -> None:
         "v11_community_rating_negative",
         "v11_community_rating_missing_average",
         "v11_community_rating_zero_count",
+        "v11_lang_region_rejected",
+        "v12_lang_e",
+        "v12_lang_english",
+        "v12_lang_underscore",
+        "v12_lang_trailing_dash",
+        "v12_lang_empty_subtag",
     ],
 )
 def test_invalid(xsd: Path, xml: Path | str) -> None:
