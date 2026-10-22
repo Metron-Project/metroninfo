@@ -174,6 +174,8 @@ def test_valid(xsd: Path, xml: Path | str) -> None:
         (TEST_V12_XSD, _lang_xml("en_US")),
         (TEST_V12_XSD, _lang_xml("en-")),
         (TEST_V12_XSD, _lang_xml("pt--br")),
+        (TEST_V12_XSD, _lang_xml(" en")),
+        (TEST_V12_XSD, _lang_xml("en ")),
     ],
     ids=[
         "dup_primary_attr_xml",
@@ -193,6 +195,8 @@ def test_valid(xsd: Path, xml: Path | str) -> None:
         "v12_lang_underscore",
         "v12_lang_trailing_dash",
         "v12_lang_empty_subtag",
+        "v12_lang_leading_space",
+        "v12_lang_trailing_space",
     ],
 )
 def test_invalid(xsd: Path, xml: Path | str) -> None:
