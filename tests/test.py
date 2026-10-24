@@ -81,6 +81,31 @@ def _lang_xml(lang: str) -> str:
         (TEST_V12_XSD, _lang_xml("zh-Hant")),
         (TEST_V12_XSD, _lang_xml("sr-latn")),
         (TEST_V12_XSD, _lang_xml("es-419")),
+        (
+                TEST_V12_XSD,
+                '<?xml version="1.0" encoding="UTF-8"?><MetronInfo>'
+                "<Series><Name>Foo</Name><StartYear>1970</StartYear><EndYear>1975</EndYear>"
+                "<Status>Completed</Status><Summary>Foo series summary.</Summary></Series><Number />"
+                "</MetronInfo>",
+        ),
+        (
+                TEST_V12_XSD,
+                '<?xml version="1.0" encoding="UTF-8"?><MetronInfo>'
+                "<Series><Name>Foo</Name><StartYear>2020</StartYear><Status>Ongoing</Status></Series><Number />"
+                "</MetronInfo>",
+        ),
+        (
+                TEST_V12_XSD,
+                '<?xml version="1.0" encoding="UTF-8"?><MetronInfo>'
+                "<Series><Name>Foo</Name><Status>Cancelled</Status></Series><Number />"
+                "</MetronInfo>",
+        ),
+        (
+                TEST_V12_XSD,
+                '<?xml version="1.0" encoding="UTF-8"?><MetronInfo>'
+                "<Series><Name>Foo</Name><Status>Hiatus</Status></Series><Number />"
+                "</MetronInfo>",
+        ),
     ],
     ids=[
         "valid_xml",
@@ -102,6 +127,10 @@ def _lang_xml(lang: str) -> str:
         "v12_lang_zh_Hant",
         "v12_lang_sr_latn",
         "v12_lang_es_419",
+        "v12_series_end_year_status_summary",
+        "v12_series_status_ongoing",
+        "v12_series_status_cancelled",
+        "v12_series_status_hiatus",
     ],
 )
 def test_valid(xsd: Path, xml: Path | str) -> None:
@@ -174,6 +203,37 @@ def test_valid(xsd: Path, xml: Path | str) -> None:
         (TEST_V12_XSD, _lang_xml("en_US")),
         (TEST_V12_XSD, _lang_xml("en-")),
         (TEST_V12_XSD, _lang_xml("pt--br")),
+        (TEST_V12_XSD, TEST_FILES_PATH / "dup_primary_attr.xml"),
+        (
+                TEST_V12_XSD,
+                '<?xml version="1.0" encoding="UTF-8"?><MetronInfo>'
+                "<Series><Name>Foo</Name><Status>Unknown</Status></Series><Number />"
+                "</MetronInfo>",
+        ),
+        (
+                TEST_V12_XSD,
+                '<?xml version="1.0" encoding="UTF-8"?><MetronInfo>'
+                "<Series><Name>Foo</Name><Status>ongoing</Status></Series><Number />"
+                "</MetronInfo>",
+        ),
+        (
+                TEST_V12_XSD,
+                '<?xml version="1.0" encoding="UTF-8"?><MetronInfo>'
+                "<Series><Name>Foo</Name><EndYear>75</EndYear></Series><Number />"
+                "</MetronInfo>",
+        ),
+        (
+                TEST_V12_XSD,
+                '<?xml version="1.0" encoding="UTF-8"?><MetronInfo>'
+                "<Series><Name>Foo</Name><Summary>Foo</Summary><Summary>Bar</Summary></Series><Number />"
+                "</MetronInfo>",
+        ),
+        (
+                TEST_V11_XSD,
+                '<?xml version="1.0" encoding="UTF-8"?><MetronInfo>'
+                "<Series><Name>Foo</Name><EndYear>1975</EndYear></Series><Number />"
+                "</MetronInfo>",
+        ),
         (TEST_V12_XSD, _lang_xml(" en")),
         (TEST_V12_XSD, _lang_xml("en ")),
     ],
@@ -195,6 +255,12 @@ def test_valid(xsd: Path, xml: Path | str) -> None:
         "v12_lang_underscore",
         "v12_lang_trailing_dash",
         "v12_lang_empty_subtag",
+        "v12_dup_primary_attr_xml",
+        "v12_series_status_unknown",
+        "v12_series_status_lowercase",
+        "v12_series_end_year_two_digit",
+        "v12_series_duplicate_summary",
+        "v11_series_end_year_not_in_v11",
         "v12_lang_leading_space",
         "v12_lang_trailing_space",
     ],
