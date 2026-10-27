@@ -16,12 +16,15 @@
         <Volume>2</Volume>
         <Format>Single Issue</Format>
         <StartYear>1970</StartYear>
+        <EndYear>1975</EndYear>
+        <Status>Completed</Status>
         <IssueCount>60</IssueCount>
         <VolumeCount>3</VolumeCount>
         <AlternativeNames>
             <AlternativeName id="1234">Foo</AlternativeName>
             <AlternativeName lang="de">Hüsker Dü</AlternativeName>
         </AlternativeNames>
+        <Summary>The World's Greatest Super-Heroes unite to protect the Earth from threats too large for any single hero.</Summary>
     </Series>
     <Number>1</Number>
     <Stories>
