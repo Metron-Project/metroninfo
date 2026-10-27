@@ -106,6 +106,12 @@
         </xs:all>
         <xs:attribute name="lang" type="languageCode" default="en" />
         <xs:attribute name="id" type="xs:string" />
+        <!-- EndYear can't precede StartYear. replace() strips the optional gYear timezone so the years cast to integers. -->
+        <xs:assert test="not(StartYear and EndYear) or
+            xs:integer(replace(string(EndYear), '(Z|[+\-]\d{2}:\d{2})$', '')) ge
+            xs:integer(replace(string(StartYear), '(Z|[+\-]\d{2}:\d{2})$', ''))" />
+        <!-- An ongoing series has no EndYear. -->
+        <xs:assert test="not(Status = 'Ongoing' and EndYear)" />
     </xs:complexType>
 
     <xs:complexType name="alternativeNameType">

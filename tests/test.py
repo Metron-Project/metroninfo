@@ -106,6 +106,24 @@ def _lang_xml(lang: str) -> str:
                 "<Series><Name>Foo</Name><Status>Hiatus</Status></Series><Number />"
                 "</MetronInfo>",
         ),
+        (
+                TEST_V12_XSD,
+                '<?xml version="1.0" encoding="UTF-8"?><MetronInfo>'
+                "<Series><Name>Foo</Name><StartYear>1970</StartYear><EndYear>1970</EndYear></Series><Number />"
+                "</MetronInfo>",
+        ),
+        (
+                TEST_V12_XSD,
+                '<?xml version="1.0" encoding="UTF-8"?><MetronInfo>'
+                "<Series><Name>Foo</Name><StartYear>1970Z</StartYear><EndYear>1975+05:00</EndYear></Series><Number />"
+                "</MetronInfo>",
+        ),
+        (
+                TEST_V12_XSD,
+                '<?xml version="1.0" encoding="UTF-8"?><MetronInfo>'
+                "<Series><Name>Foo</Name><EndYear>1975</EndYear><Status>Completed</Status></Series><Number />"
+                "</MetronInfo>",
+        ),
     ],
     ids=[
         "valid_xml",
@@ -131,6 +149,9 @@ def _lang_xml(lang: str) -> str:
         "v12_series_status_ongoing",
         "v12_series_status_cancelled",
         "v12_series_status_hiatus",
+        "v12_series_end_year_same_as_start",
+        "v12_series_years_with_timezones",
+        "v12_series_end_year_without_start",
     ],
 )
 def test_valid(xsd: Path, xml: Path | str) -> None:
@@ -229,6 +250,24 @@ def test_valid(xsd: Path, xml: Path | str) -> None:
                 "</MetronInfo>",
         ),
         (
+                TEST_V12_XSD,
+                '<?xml version="1.0" encoding="UTF-8"?><MetronInfo>'
+                "<Series><Name>Foo</Name><StartYear>1975</StartYear><EndYear>1970</EndYear></Series><Number />"
+                "</MetronInfo>",
+        ),
+        (
+                TEST_V12_XSD,
+                '<?xml version="1.0" encoding="UTF-8"?><MetronInfo>'
+                "<Series><Name>Foo</Name><StartYear>1975-05:00</StartYear><EndYear>1970Z</EndYear></Series><Number />"
+                "</MetronInfo>",
+        ),
+        (
+                TEST_V12_XSD,
+                '<?xml version="1.0" encoding="UTF-8"?><MetronInfo>'
+                "<Series><Name>Foo</Name><StartYear>1970</StartYear><EndYear>1975</EndYear><Status>Ongoing</Status></Series><Number />"
+                "</MetronInfo>",
+        ),
+        (
                 TEST_V11_XSD,
                 '<?xml version="1.0" encoding="UTF-8"?><MetronInfo>'
                 "<Series><Name>Foo</Name><EndYear>1975</EndYear></Series><Number />"
@@ -260,6 +299,9 @@ def test_valid(xsd: Path, xml: Path | str) -> None:
         "v12_series_status_lowercase",
         "v12_series_end_year_two_digit",
         "v12_series_duplicate_summary",
+        "v12_series_end_year_before_start",
+        "v12_series_end_year_before_start_with_timezones",
+        "v12_series_ongoing_with_end_year",
         "v11_series_end_year_not_in_v11",
         "v12_lang_leading_space",
         "v12_lang_trailing_space",
