@@ -27,7 +27,13 @@ the comic resources (Comic Vine, AniList, etc.)
 
 ## Where can I find the schemas?
 
-Version 1.0 of the schema is located in [schema](./schema) directory
+The schemas are located in the [schema](./schema) directory, with one folder per version. The latest version is
+[v1.2](./schema/v1.2/MetronInfo.xsd), and a [sample](./schema/v1.2/Sample.xml) file is included alongside it.
+
+Previous versions are still available:
+
+- [v1.1](./schema/v1.1/MetronInfo.xsd)
+- [v1.0](./schema/v1.0/MetronInfo.xsd)
 
 ## Is there documentation for it?
 
