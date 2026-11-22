@@ -6,6 +6,7 @@ from xmlschema import XMLSchema11, XMLSchemaValidationError
 TEST_V10_XSD = Path(__file__).parent.parent / "schema" / "v1.0" / "MetronInfo.xsd"
 TEST_V11_XSD = Path(__file__).parent.parent / "schema" / "v1.1" / "MetronInfo.xsd"
 TEST_V12_XSD = Path(__file__).parent.parent / "schema" / "v1.2" / "MetronInfo.xsd"
+TEST_V13_XSD = Path(__file__).parent.parent / "drafts" / "v1.3" / "MetronInfo.xsd"
 TEST_FILES_PATH = Path(__file__).parent / "test_files" / "v1.0"
 
 
@@ -124,6 +125,8 @@ def _lang_xml(lang: str) -> str:
                 "<Series><Name>Foo</Name><EndYear>1975</EndYear><Status>Completed</Status></Series><Number />"
                 "</MetronInfo>",
         ),
+        (TEST_V13_XSD, TEST_FILES_PATH / "valid.xml"),
+        (TEST_V13_XSD, Path(__file__).parent.parent / "drafts" / "v1.3" / "Sample.xml"),
     ],
     ids=[
         "valid_xml",
@@ -152,6 +155,8 @@ def _lang_xml(lang: str) -> str:
         "v12_series_end_year_same_as_start",
         "v12_series_years_with_timezones",
         "v12_series_end_year_without_start",
+        "v13_valid_xml",
+        "v13_sample_xml",
     ],
 )
 def test_valid(xsd: Path, xml: Path | str) -> None:
