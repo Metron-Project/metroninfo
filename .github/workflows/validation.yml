@@ -20,8 +20,13 @@ jobs:
       - name: Install xmllint
         run: sudo apt-get install -y libxml2-utils
       # libxml2 >= 2.13 no longer fetches schemas over HTTP, so download the
-      # XSD 1.1 meta-schema first and validate against the local copy.
+      # XSD 1.1 meta-schema and the xml.xsd it imports, then point that
+      # import at the local copy and validate against it.
       - name: Download XSD meta-schema
-        run: curl -sSfL --retry 3 -o "$RUNNER_TEMP/XMLSchema.xsd" https://www.w3.org/2009/XMLSchema/XMLSchema.xsd
+        run: |
+          curl -sSfL --retry 3 -o "$RUNNER_TEMP/XMLSchema.xsd" https://www.w3.org/2009/XMLSchema/XMLSchema.xsd
+          curl -sSfL --retry 3 -o "$RUNNER_TEMP/xml.xsd" https://www.w3.org/2001/xml.xsd
+          sed -i 's#schemaLocation="http://www.w3.org/2001/xml.xsd"#schemaLocation="xml.xsd"#' "$RUNNER_TEMP/XMLSchema.xsd"
+          grep -q 'schemaLocation="xml.xsd"' "$RUNNER_TEMP/XMLSchema.xsd"
       - name: Validate XSD Schemas
         run: find . -type f -name "*.xsd" -exec xmllint --noout --schema "$RUNNER_TEMP/XMLSchema.xsd" {} +
